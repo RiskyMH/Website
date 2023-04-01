@@ -20,7 +20,7 @@ export default function Home() {
                 <meta property="og:description" content="Just a random person on the internet" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://riskymh.dev/" />
-                
+
             </Head>
 
             <main className='rounded-md bg-[#2a2a2a] p-4 flex flex-col md:flex-row md:p-6 items-center shadow-md'>
@@ -38,11 +38,11 @@ export default function Home() {
                         <LinkButton url='mailto:michael@riskymh.dev' text='Email' icon={<MailIcon />} />
                         {/* <LinkButton url='/projects' text='Projects' icon={<ExternalIcon />} /> */}
                         <LinkButton url='https://github.com/RiskyMH?tab=repositories' text='Projects' icon={<ExternalIcon />} newTab />
-
                     </ul>
                 </div>
 
             </main>
+
         </>
     )
 }
@@ -50,7 +50,7 @@ export default function Home() {
 function LinkButton({ url, text, icon, newTab }: { url: string, text: string, icon: ReactElement, newTab?: boolean }) {
     return (
         <li className='w-auto inline-block md:mr-2' title={text}>
-            <a href={url} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" className='block rounded-sm bg-[#4a4a4a] hover:bg-white hover:text-[#1a1a1a] p-1.5 shadow-sm mt-2 w-full md:w-20 text-center md:mt-0'>
+            <a href={url} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" aria-label={text} className='block rounded-sm bg-[#4a4a4a] hover:bg-white hover:text-[#1a1a1a] p-1.5 shadow-sm mt-2 w-full md:w-20 text-center md:mt-0'>
                 {icon}
             </a>
 
