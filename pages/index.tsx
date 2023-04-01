@@ -20,10 +20,11 @@ export default function Home() {
                 <meta property="og:description" content="Just a random person on the internet" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://riskymh.dev/" />
+                
             </Head>
 
             <main className='rounded-md bg-[#2a2a2a] p-4 flex flex-col md:flex-row md:p-6 items-center shadow-md'>
-                <img className="rounded-lg w-32 bg-[#3a3a3a]" src="https://avatars.githubusercontent.com/u/56214343?v=4" alt="avatar" />
+                <img className="rounded-lg w-32 h-32 bg-[#3a3a3a]" src="https://avatars.githubusercontent.com/u/56214343?v=4" alt="avatar" />
 
                 <div className='flex flex-col md:ml-5'>
                     <main className='mt-2 mb-2 md:mt-0 md:mb-0 text-center md:text-left'>
