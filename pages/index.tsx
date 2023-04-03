@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { type ReactElement } from 'react'
+import { useState, type ReactElement, useEffect } from 'react'
 import { URLPattern } from 'next/server'
 import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+
     return (
         <>
             <Head>
@@ -22,35 +24,125 @@ export default function Home() {
                 <meta property="og:url" content="https://riskymh.dev/" />
 
             </Head>
+            {/* TODO: only show at the top for desktop (alway mobile) */}
+            <div id='scroll-for-projects' className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#1a1a1a] bg-opacity-75 p-2 pt-0 pb-0 mb-2 rounded-lg`}>
+                <p className='text-[#8f8f8f] mb-1'>Scroll to projects!</p>
+                <div className='flex justify-center'>
+                    <svg className='w-4 h-4 text-[#8f8f8f] animate-bounce' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 3a1 1 0 00-1 1v10.586l-2.293-2.293a1 1 0 10-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 10-1.414-1.414L11 15.586V4a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                </div>
+            </div>
 
-            <main className='rounded-md bg-[#2a2a2a] p-4 flex flex-col md:flex-row md:p-6 items-center shadow-md'>
-                <img className="rounded-lg w-32 h-32 bg-[#3a3a3a]" src="https://avatars.githubusercontent.com/u/56214343?v=4" alt="avatar" />
+            <div id='main' className='bg-[#1a1a1a] snap-y snap-mandatory overflow-y-scroll h-screen w-screen border-solid border-gray-200 text-white box-border border-0 m-0 p-0'>
+                <div className='snap-start flex h-screen items-center justify-center'>
+                    <main className='rounded-md bg-[#2a2a2a] p-4 flex flex-col md:flex-row md:p-6 items-center shadow-md'>
+                        <img className="rounded-lg w-32 h-32 bg-[#3a3a3a]" src="https://avatars.githubusercontent.com/u/56214343?v=4" alt="avatar" />
 
-                <div className='flex flex-col md:ml-5'>
-                    <main className='mt-2 mb-2 md:mt-0 md:mb-0 text-center md:text-left'>
-                        <h1 className='text-3xl leading-9 font-bold'>RiskyMH</h1>
-                        <p className='text-[#8f8f8f]' >Just a random person on the internet</p>
+                        <div className='flex flex-col md:ml-5'>
+                            <main className='mt-2 mb-2 md:mt-0 md:mb-0 text-center md:text-left'>
+                                <h1 className='text-3xl leading-9 font-bold'>RiskyMH</h1>
+                                <p className='text-[#8f8f8f]'>Just a random person on the internet</p>
+                            </main>
+
+                            <ul className='flex mt-0 md:mt-2 flex-col md:flex-row'>
+                                <LinkButton url='https://github.com/RiskyMH' text='GitHub' icon={<GitHubIcon />} />
+                                <LinkButton url='https://discord.gg/qK9pfnB3Yv' text='Discord Server' icon={<DiscordIcon />} />
+                                <LinkButton url='mailto:michael@riskymh.dev' text='Email' icon={<MailIcon />} />
+                                {/* <LinkButton url='/projects' text='Projects' icon={<ExternalIcon />} /> */}
+                                <LinkButton url='https://github.com/RiskyMH?tab=repositories' text='Projects' icon={<ExternalIcon />} newTab />
+                            </ul>
+                        </div>
+
                     </main>
-
-                    <ul className='flex mt-0 md:mt-2 flex-col md:flex-row'>
-                        <LinkButton url='https://github.com/RiskyMH' text='GitHub' icon={<GitHubIcon />} />
-                        <LinkButton url='https://discord.gg/qK9pfnB3Yv' text='Discord Server' icon={<DiscordIcon />} />
-                        <LinkButton url='mailto:michael@riskymh.dev' text='Email' icon={<MailIcon />} />
-                        {/* <LinkButton url='/projects' text='Projects' icon={<ExternalIcon />} /> */}
-                        <LinkButton url='https://github.com/RiskyMH?tab=repositories' text='Projects' icon={<ExternalIcon />} newTab />
-                    </ul>
+                </div>
+                <div className='snap-start text-center h-screen md:h-auto flex justify-center items-center'>
+                    <div>
+                        <h1 className='text-3xl leading-9 font-bold pt-4'>Projects<span className='hidden md:inline'>:</span></h1>
+                        <p className='text-[#8f8f8f]'>The things that I have worked on!</p>
+                    </div>
                 </div>
 
-            </main>
+                {/* <div className='snap-start flex h-screen w-screen items-center justify-center'> */}
+                {/* <div className='md:snap-y md:overflow-y-scroll'> */}
+                <ProjectInfo
+                    name='RiskyBOT'
+                    icon='https://bot.riskymh.dev/robot.png'
+                    iconCircle
+                    links={[
+                        { type: 'discord-bot-invite', url: 'https://discord.com/api/oauth2/authorize?client_id=780657028695326720&scope=applications.commands' },
+                        { url: 'https://github.com/RiskyMH/RiskyBOT', type: 'github' },
+                        { url: 'https://bot.riskymh.dev', type: 'website' },
+                    ]}
+                    description='A multipurpose Discord bot that can do random things...'
+                />
 
+                <ProjectInfo
+                    name='Boppy McBop Face'
+                    icon='https://raw.githubusercontent.com/RiskyMH/RiskyMH.github.io/master/images/McBop.svg'
+                    iconCircle
+                    links={[
+                        { type: 'discord-bot-invite', url: 'https://discord.com/oauth2/authorize?client_id=890492527701024808&permissions=8&scope=bot%20applications.commands' },
+                        { url: '', type: 'website', disabled: 'Currently doesn\'t have website' },
+                    ]}
+                    description='A Discord leveling bot with some other server features...'
+                />
+
+                <ProjectInfo
+                    name='Tools'
+                    icon='https://em-content.zobj.net/source/microsoft-teams/337/hammer-and-wrench_1f6e0-fe0f.png'
+                    links={[
+                        { url: 'https://tools.riskymh.dev', type: 'website' },
+                        { url: 'https://github.com/RiskyMH/Tools', type: 'github' },
+                    ]}
+                    description='A website with random tools (some are discord related) [NOTE: Not public yet]'
+                />
+
+                {/* </div> */}
+                {/* </div> */}
+            </div>
         </>
     )
 }
 
-function LinkButton({ url, text, icon, newTab }: { url: string, text: string, icon: ReactElement, newTab?: boolean }) {
+function ProjectInfo({ name, icon, links, description, iconCircle }: { name: string, icon?: string, links: { url: string, type: 'website' | 'discord' | 'github' | 'discord-bot-invite', disabled?: string }[], description: string, iconCircle?: boolean }) {
+    // close to the main info, there will be many cards that will be underneath eachother 
     return (
-        <li className='w-auto inline-block md:mr-2' title={text}>
-            <a href={url} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" aria-label={text} className='block rounded-sm bg-[#4a4a4a] hover:bg-white hover:text-[#1a1a1a] p-1.5 shadow-sm mt-2 w-full md:w-20 text-center md:mt-0'>
+        <div className='snap-start flex h-screen w-screen md:h-auto md:w-auto items-center justify-center'>
+            <main className='rounded-md bg-[#2a2a2a] p-4 m-8 flex flex-col md:flex-row md:p-6 items-center shadow-md'>
+                <img loading='lazy' className={`${iconCircle ? 'rounded-full' : 'rounded-lg'} w-24 h-24 bg-[#3a3a3a]`} src={icon} alt="avatar" />
+
+                <div className='flex flex-col md:ml-5'>
+                    <main className='mt-2 mb-2 md:mt-0 md:mb-0 text-center md:text-left'>
+                        <h1 className='text-2xl leading-9 font-bold'>{name}</h1>
+                        <p className='text-[#8f8f8f] md:w-[26rem]' >{description}</p>
+                    </main>
+
+                    <ul className='flex mt-2 flex-row justify-center md:justify-normal'>
+                        {links.map((link, index) => {
+                            if (link.type === 'website') {
+                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'Website'} icon={<ExternalIcon />} newTab noMobile />
+                            } else if (link.type === 'discord') {
+                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'Discord Server'} icon={<DiscordIcon />} newTab noMobile />
+                            } else if (link.type === 'discord-bot-invite') {
+                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'Invite Bot'} icon={<DiscordIcon />} newTab noMobile />
+                            } else if (link.type === 'github') {
+                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'GitHub'} icon={<GitHubIcon />} newTab noMobile />
+                            }
+                        })
+                        }
+                    </ul>
+                </div>
+            </main>
+        </div>
+
+    )
+}
+
+function LinkButton({ url, text, icon, newTab, noMobile, disabled }: { url: string, text: string, icon: ReactElement, newTab?: boolean, noMobile?: boolean, disabled?: string }) {
+    return (
+        <li className='w-auto inline-block mr-2' title={text}>
+            <a href={url == '' ? '#' : url} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" title={disabled || text} className={`block rounded-sm bg-[#4a4a4a] p-1.5 shadow-sm text-center ${noMobile ? 'w-20 mt-0' : 'mt-2 w-full md:w-20 md:mt-0'} ${disabled ? 'opacity-25 cursor-default' : 'hover:bg-white hover:text-[#1a1a1a]'}`}>
                 {icon}
             </a>
 
