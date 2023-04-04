@@ -21,6 +21,7 @@ export default function Home() {
             setBottomOfPage(scrollPosition === scrollMax)
 
         }
+        handleScroll()
 
         element?.addEventListener('scroll', handleScroll);
 
