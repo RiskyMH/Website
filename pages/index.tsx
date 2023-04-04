@@ -1,10 +1,6 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import { useState, type ReactElement, useEffect } from 'react'
-import { URLPattern } from 'next/server'
 import Head from 'next/head'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
@@ -69,7 +65,7 @@ export default function Home() {
             <div id='main' className='bg-[#1a1a1a] snap-y snap-mandatory overflow-y-scroll h-screen w-screen border-solid border-gray-200 text-white box-border border-0 m-0 p-0'>
                 <div className='snap-start flex h-screen items-center justify-center'>
                     <main className='rounded-md bg-[#2a2a2a] p-4 flex flex-col md:flex-row md:p-6 items-center shadow-md'>
-                        <img className="rounded-lg w-32 h-32 bg-[#3a3a3a]" src="https://avatars.githubusercontent.com/u/56214343?v=4" alt="avatar" />
+                        <img className="rounded-lg w-32 h-32 bg-[#3a3a3a]" src="/logo.png" alt="avatar" />
 
                         <div className='flex flex-col md:ml-5'>
                             <main className='mt-2 mb-2 md:mt-0 md:mb-0 text-center md:text-left'>
@@ -95,8 +91,6 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* <div className='snap-start flex h-screen w-screen items-center justify-center'> */}
-                {/* <div className='md:snap-y md:overflow-y-scroll'> */}
                 <ProjectInfo
                     name='RiskyBOT'
                     icon='https://bot.riskymh.dev/robot.png'
@@ -111,7 +105,7 @@ export default function Home() {
 
                 <ProjectInfo
                     name='Boppy McBop Face'
-                    icon='https://raw.githubusercontent.com/RiskyMH/RiskyMH.github.io/master/images/McBop.svg'
+                    icon='/mcbop.svg'
                     iconCircle
                     links={[
                         { type: 'discord-bot-invite', url: 'https://discord.com/oauth2/authorize?client_id=890492527701024808&permissions=8&scope=bot%20applications.commands' },
@@ -122,7 +116,7 @@ export default function Home() {
 
                 <ProjectInfo
                     name='Tools'
-                    icon='https://em-content.zobj.net/source/microsoft-teams/337/hammer-and-wrench_1f6e0-fe0f.png'
+                    icon='/tools.png'
                     links={[
                         { url: 'https://tools.riskymh.dev', type: 'website' },
                         { url: 'https://github.com/RiskyMH/Tools', type: 'github' },
@@ -130,8 +124,6 @@ export default function Home() {
                     description='A website with random tools (some are discord related) [NOTE: Not public yet]'
                 />
 
-                {/* </div> */}
-                {/* </div> */}
             </div>
         </>
     )
@@ -153,13 +145,13 @@ function ProjectInfo({ name, icon, links, description, iconCircle }: { name: str
                     <ul className='flex mt-2 flex-row justify-center md:justify-normal'>
                         {links.map((link, index) => {
                             if (link.type === 'website') {
-                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'Website'} icon={<ExternalIcon />} newTab noMobile />
+                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'Website'} icon={<ExternalIcon />} newTab={!link.disabled} noMobile />
                             } else if (link.type === 'discord') {
-                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'Discord Server'} icon={<DiscordIcon />} newTab noMobile />
+                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'Discord Server'} icon={<DiscordIcon />} newTab={!link.disabled} noMobile />
                             } else if (link.type === 'discord-bot-invite') {
-                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'Invite Bot'} icon={<DiscordIcon />} newTab noMobile />
+                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'Invite Bot'} icon={<DiscordIcon />} newTab={!link.disabled} noMobile />
                             } else if (link.type === 'github') {
-                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'GitHub'} icon={<GitHubIcon />} newTab noMobile />
+                                return <LinkButton key={link.type} url={link.url} disabled={link.disabled} text={link.disabled || 'GitHub'} icon={<GitHubIcon />} newTab={!link.disabled} noMobile />
                             }
                         })
                         }

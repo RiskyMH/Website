@@ -5,9 +5,9 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* favicon */}
-        <link rel="icon" href="https://avatars.githubusercontent.com/u/56214343?v=4" />
+        <link rel="icon" href="/logo.png" />
       </Head>
-      <body>
+      <body >
         <Main />
         <NextScript />
       </body>
