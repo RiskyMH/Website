@@ -8,6 +8,38 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
+    const [passedFIrstPage, setPassedFirstPage] = useState(false)
+    const [bottomOfPage, setBottomOfPage] = useState(false)
+
+    useEffect(() => {
+        const element = document.getElementById('main') as HTMLDivElement | null
+        if (!element) return
+        
+        function handleScroll() {
+            if (!element) return
+
+            const scrollPosition = element?.scrollTop;
+            const scrollMax = element?.scrollHeight  - element?.offsetHeight
+
+            setPassedFirstPage(scrollPosition !== 0);
+            setBottomOfPage(scrollPosition === scrollMax)
+
+        }
+
+        element?.addEventListener('scroll', handleScroll);
+
+        return () => {
+            element ?.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    function scrollDown(element: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        // scroll down one height (screen height)
+        const mainElement = document.getElementById('main')
+
+        mainElement?.scrollBy({top: 1, behavior: 'smooth'})
+
+    }
 
     return (
         <>
@@ -24,8 +56,8 @@ export default function Home() {
                 <meta property="og:url" content="https://riskymh.dev/" />
 
             </Head>
-            {/* TODO: only show at the top for desktop (alway mobile) */}
-            <div id='scroll-for-projects' className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#1a1a1a] bg-opacity-75 p-2 pt-0 pb-0 mb-2 rounded-lg`}>
+
+            <div id='scroll-for-projects' onClick={scrollDown} className={`hover:bg-[#2a2a2a] absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-opacity-75 p-2 pt-0 pb-0 mb-2 rounded-lg duration-200 transition-all ease-in-out cursor-pointer ${passedFIrstPage ? 'md:opacity-0' : 'md:opacity-100'} ${bottomOfPage ? 'opacity-0': 'opacity-100'}`}>
                 <p className='text-[#8f8f8f] mb-1'>Scroll to projects!</p>
                 <div className='flex justify-center'>
                     <svg className='w-4 h-4 text-[#8f8f8f] animate-bounce' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -49,14 +81,14 @@ export default function Home() {
                                 <LinkButton url='https://github.com/RiskyMH' text='GitHub' icon={<GitHubIcon />} />
                                 <LinkButton url='https://discord.gg/qK9pfnB3Yv' text='Discord Server' icon={<DiscordIcon />} />
                                 <LinkButton url='mailto:michael@riskymh.dev' text='Email' icon={<MailIcon />} />
-                                {/* <LinkButton url='/projects' text='Projects' icon={<ExternalIcon />} /> */}
-                                <LinkButton url='https://github.com/RiskyMH?tab=repositories' text='Projects' icon={<ExternalIcon />} newTab />
+                                {/* Placeholder for when I actually have another thing */}
+                                <LinkButton url='https://riskymh.dev' text='Website' icon={<ExternalIcon />} />
                             </ul>
                         </div>
 
                     </main>
                 </div>
-                <div className='snap-start text-center h-screen md:h-auto flex justify-center items-center'>
+                <div id='projects' className='snap-start text-center h-screen md:h-auto flex justify-center items-center'>
                     <div>
                         <h1 className='text-3xl leading-9 font-bold pt-4'>Projects<span className='hidden md:inline'>:</span></h1>
                         <p className='text-[#8f8f8f]'>The things that I have worked on!</p>
