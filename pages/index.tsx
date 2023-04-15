@@ -66,7 +66,7 @@ export default function Home() {
             <div id='main' className='bg-[#1a1a1a] snap-y snap-mandatory overflow-y-scroll h-screen w-screen border-solid border-gray-200 text-white box-border border-0 m-0 p-0'>
                 <div className='snap-start flex h-screen items-center justify-center'>
                     <main className='rounded-md bg-[#2a2a2a] p-4 flex flex-col md:flex-row md:p-6 items-center shadow-md'>
-                        <img className="rounded-lg w-32 h-32 bg-[#3a3a3a]" src="/fire_anim.png" alt="🔥 Avatar" title="A risky fire..." data-from='https://github.com/microsoft/fluentui-emoji/tree/main/assets/Fire' />
+                        <img className="rounded-lg w-32 h-32 bg-[#3a3a3a]" loading="lazy" src="/fire_anim.png" alt="🔥 Avatar" title="A risky fire..." data-from='https://github.com/microsoft/fluentui-emoji/tree/main/assets/Fire' />
 
                         <div className='flex flex-col md:ml-5'>
                             <main className='mt-2 mb-2 md:mt-0 md:mb-0 text-center md:text-left'>
