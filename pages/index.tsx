@@ -48,9 +48,9 @@ export default function Home() {
                 <meta name="keywords" content="RiskyMH" />
 
                 {/* Coloring mainly for discord */}
-                <meta name="theme-color" content="#FF6723" key='color' /> 
                 {/* <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2a2a2a" key='color-light' /> */}
                 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2a2a" key='color-dark' />
+                <meta name="theme-color" content="#FF6723" key='color' /> 
 
                 {/* Fancier SEO */}
                 <meta property="og:title" content="RiskyMH" />
