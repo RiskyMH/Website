@@ -10,12 +10,12 @@ export default function Home() {
     useEffect(() => {
         const element = document.getElementById('main') as HTMLDivElement | null
         if (!element) return
-        
+
         function handleScroll() {
             if (!element) return
 
             const scrollPosition = element?.scrollTop;
-            const scrollMax = element?.scrollHeight  - element?.offsetHeight
+            const scrollMax = element?.scrollHeight - element?.offsetHeight
 
             setPassedFirstPage(scrollPosition !== 0);
             setBottomOfPage(scrollPosition === scrollMax)
@@ -26,7 +26,7 @@ export default function Home() {
         element?.addEventListener('scroll', handleScroll);
 
         return () => {
-            element ?.removeEventListener('scroll', handleScroll);
+            element?.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
@@ -34,7 +34,7 @@ export default function Home() {
         // scroll down one height (screen height)
         const mainElement = document.getElementById('main')
 
-        mainElement?.scrollBy({top: 1, behavior: 'smooth'})
+        mainElement?.scrollBy({ top: 1, behavior: 'smooth' })
 
     }
 
@@ -47,6 +47,11 @@ export default function Home() {
                 <meta name="description" content="Just a random person on the internet" />
                 <meta name="keywords" content="RiskyMH" />
 
+                {/* Coloring mainly for discord */}
+                <meta name="theme-color" content="#FF6723" /> 
+                {/* <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2a2a2a" /> */}
+                <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2a2a" />
+
                 <meta property="og:title" content="RiskyMH" />
                 <meta property="og:description" content="Just a random person on the internet" />
                 <meta property="og:type" content="website" />
@@ -54,7 +59,7 @@ export default function Home() {
 
             </Head>
 
-            <div id='scroll-for-projects' onClick={scrollDown} className={`hover:bg-[#2a2a2a] absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-opacity-75 p-2 pt-0 pb-0 mb-2 rounded-lg duration-200 transition-all ease-in-out cursor-pointer ${passedFIrstPage ? 'md:opacity-0' : 'md:opacity-100'} ${bottomOfPage ? 'opacity-0': 'opacity-100'}`}>
+            <div id='scroll-for-projects' onClick={scrollDown} className={`hover:bg-[#2a2a2a] absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-opacity-75 p-2 pt-0 pb-0 mb-2 rounded-lg duration-200 transition-all ease-in-out cursor-pointer ${passedFIrstPage ? 'md:opacity-0' : 'md:opacity-100'} ${bottomOfPage ? 'opacity-0' : 'opacity-100'}`}>
                 <p className='text-[#8f8f8f] mb-1'>Scroll to projects!</p>
                 <div className='flex justify-center'>
                     <svg className='w-4 h-4 text-[#8f8f8f] animate-bounce' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -122,7 +127,7 @@ export default function Home() {
                         { url: 'https://tools.riskymh.dev', type: 'website' },
                         { url: 'https://github.com/RiskyMH/Tools', type: 'github' },
                     ]}
-                    description='A website with random tools (some are discord related) [NOTE: Not public yet]'
+                    description='A website with random tools (some are discord related) [ALPHA]'
                 />
 
             </div>
