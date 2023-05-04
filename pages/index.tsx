@@ -43,15 +43,16 @@ export default function Home() {
             <Head>
                 <title>RiskyMH</title>
 
-                {/* seo */}
+                {/* SEO */}
                 <meta name="description" content="Just a random person on the internet" />
                 <meta name="keywords" content="RiskyMH" />
 
                 {/* Coloring mainly for discord */}
-                <meta name="theme-color" content="#FF6723" /> 
-                {/* <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2a2a2a" /> */}
-                <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2a2a" />
+                <meta name="theme-color" content="#FF6723" key='color' /> 
+                {/* <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2a2a2a" key='color-light' /> */}
+                <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2a2a" key='color-dark' />
 
+                {/* Fancier SEO */}
                 <meta property="og:title" content="RiskyMH" />
                 <meta property="og:description" content="Just a random person on the internet" />
                 <meta property="og:type" content="website" />
