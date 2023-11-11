@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectInfo from "../components/ProjectInfo.astro";
+import LinkButton from "../components/LinkButton.astro";
+import GitHubIcon from "../components/GitHubIcon.astro";
+import DiscordIcon from "../components/DiscordIcon.astro";
+import ExternalIcon from "../components/ExternalIcon.astro";
+import MailIcon from "../components/MailIcon.astro";
+import ScrollForProjects from "../components/Scroll.jsx";
+---
+
+<Layout>
+  <div
+    id="main"
+    class="bg-[#1a1a1a] snap-y snap-mandatory overflow-y-scroll h-screen w-screen border-solid border-gray-200 text-white box-border border-0 m-0 p-0"
+  >
+    <div class="snap-start flex h-screen items-center justify-center">
+      <main
+        class="rounded-md bg-[#2a2a2a] p-4 flex flex-col md:flex-row md:p-6 items-center shadow-md"
+      >
+        <img
+          class="rounded-lg w-32 h-32 bg-[#3a3a3a]"
+          loading="lazy"
+          src="/fire_anim.png"
+          alt="🔥 Avatar"
+          title="A risky fire..."
+          data-from="https://github.com/microsoft/fluentui-emoji/tree/main/assets/Fire"
+        />
+
+        <ScrollForProjects client:load />
+
+        <div class="flex flex-col md:ml-5">
+          <main class="mt-2 mb-2 md:mt-0 md:mb-0 text-center md:text-left">
+            <h1 class="text-3xl leading-9 font-bold">RiskyMH</h1>
+            <p class="text-[#8f8f8f]">Just a random person on the internet</p>
+          </main>
+
+          <ul class="flex mt-0 md:mt-2 flex-col md:flex-row">
+            <LinkButton
+              url="https://github.com/RiskyMH"
+              text="GitHub"
+              Icon={GitHubIcon}
+            />
+            <LinkButton
+              url="https://discord.gg/qK9pfnB3Yv"
+              text="Discord Server"
+              Icon={DiscordIcon}
+            />
+            <LinkButton
+              url="mailto:michael@riskymh.dev"
+              text="Email"
+              Icon={MailIcon}
+            />
+            {/* Placeholder for when I actually have another thing */}
+            <LinkButton
+              url="https://riskymh.dev"
+              text="Website"
+              Icon={ExternalIcon}
+            />
+          </ul>
+        </div>
+      </main>
+    </div>
+    <div
+      id="projects"
+      class="snap-start text-center h-screen md:h-auto flex justify-center items-center"
+    >
+      <div>
+        <h1 class="text-3xl leading-9 font-bold pt-4">
+          Projects<span class="hidden md:inline">:</span>
+        </h1>
+        <p class="text-[#8f8f8f]">The things that I have worked on!</p>
+      </div>
+    </div>
+
+    <ProjectInfo
+      name="RiskyBOT"
+      icon="https://bot.riskymh.dev/robot.png"
+      iconCircle
+      links={[
+        {
+          type: "discord-bot-invite",
+          url: "https://discord.com/api/oauth2/authorize?client_id=780657028695326720&scope=applications.commands",
+        },
+        { url: "https://github.com/RiskyMH/RiskyBOT", type: "github" },
+        { url: "https://bot.riskymh.dev", type: "website" },
+      ]}
+      description="A multipurpose Discord bot that can do random things..."
+    />
+
+    <ProjectInfo
+      name="Boppy McBop Face"
+      icon="/mcbop.svg"
+      iconCircle
+      links={[
+        {
+          type: "discord-bot-invite",
+          url: "https://discord.com/oauth2/authorize?client_id=890492527701024808&permissions=8&scope=bot%20applications.commands",
+        },
+        { url: "", type: "website", disabled: "Currently doesn't have website" },
+      ]}
+      description="A Discord leveling bot with some other server features..."
+    />
+
+    <ProjectInfo
+      name="Tools"
+      icon="/tools.png"
+      links={[
+        { url: "https://tools.riskymh.dev", type: "website" },
+        { url: "https://github.com/RiskyMH/Tools", type: "github" },
+      ]}
+      description="A website with random tools (some are discord related) [ALPHA]"
+    />
+  </div>
+</Layout>
