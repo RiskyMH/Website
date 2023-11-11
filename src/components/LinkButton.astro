@@ -1,30 +1,30 @@
 ---
 interface Props {
-	url: string;
-	text: string;
-	Icon: any;
-	newTab?: boolean;
-	noMobile?: boolean;
-	disabled?: string;
+  url: string;
+  text: string;
+  Icon: any;
+  newTab?: boolean;
+  noMobile?: boolean;
+  disabled?: string;
 }
 
 const { url, text, Icon, newTab, noMobile, disabled } = Astro.props;
 ---
 
 <li class="w-auto inline-block mr-2" title={text}>
-	<a
-		href={url == "" ? "#" : url}
-		target={newTab ? "_blank" : "_self"}
-		rel="noopener noreferrer"
-		title={disabled || text}
-		class={`block rounded-sm bg-[#4a4a4a] p-1.5 shadow-sm text-center ${
-			noMobile ? "w-20 mt-0" : "mt-2 w-full md:w-20 md:mt-0"
-		} ${
-			disabled
-				? "opacity-25 cursor-default"
-				: "hover:bg-white hover:text-[#1a1a1a]"
-		}`}
-	>
-		<Icon />
-	</a>
+  <a
+    href={url == "" ? "#" : url}
+    target={newTab ? "_blank" : "_self"}
+    rel="noopener noreferrer"
+    title={disabled || text}
+    class={`block rounded-sm bg-[#4a4a4a] p-1.5 shadow-sm text-center ${
+      noMobile ? "w-20 mt-0" : "mt-2 w-full md:w-20 md:mt-0"
+    } ${
+      disabled
+        ? "opacity-25 cursor-default"
+        : "hover:bg-white hover:text-[#1a1a1a]"
+    }`}
+  >
+    <Icon />
+  </a>
 </li>
