@@ -1,0 +1,95 @@
+---
+import DiscordIcon from "./DiscordIcon.astro";
+import ExternalIcon from "./ExternalIcon.astro";
+import GitHubIcon from "./GitHubIcon.astro";
+import LinkButton from "./LinkButton.astro";
+
+interface Props {
+	name: string;
+	icon?: string;
+	links: {
+		url: string;
+		type: "website" | "discord" | "github" | "discord-bot-invite";
+		disabled?: string;
+	}[];
+	description: string;
+	iconCircle?: boolean;
+}
+const { name, icon, links, description, iconCircle } = Astro.props;
+---
+
+<div
+	class="snap-start flex h-screen w-screen md:h-auto md:w-auto items-center justify-center"
+>
+	<main
+		class="rounded-md bg-[#2a2a2a] p-4 m-8 flex flex-col md:flex-row md:p-6 items-center shadow-md"
+	>
+		<img
+			loading="lazy"
+			class={`${
+				iconCircle ? "rounded-full" : "rounded-lg"
+			} w-24 h-24 bg-[#3a3a3a]`}
+			src={icon}
+			alt="avatar"
+		/>
+
+		<div class="flex flex-col md:ml-5">
+			<main class="mt-2 mb-2 md:mt-0 md:mb-0 text-center md:text-left">
+				<h1 class="text-2xl leading-9 font-bold">{name}</h1>
+				<p class="text-[#8f8f8f] md:w-[26rem]">{description}</p>
+			</main>
+
+			<ul class="flex mt-2 flex-row justify-center md:justify-normal">
+				{
+					links.map((link, _index) => {
+						if (link.type === "website") {
+							return (
+								<LinkButton
+									url={link.url}
+									disabled={link.disabled}
+									text={link.disabled || "Website"}
+									Icon={ExternalIcon}
+									newTab={!link.disabled}
+									noMobile
+								/>
+							);
+						} else if (link.type === "discord") {
+							return (
+								<LinkButton
+									url={link.url}
+									disabled={link.disabled}
+									text={link.disabled || "Discord Server"}
+									Icon={DiscordIcon}
+									newTab={!link.disabled}
+									noMobile
+								/>
+							);
+						} else if (link.type === "discord-bot-invite") {
+							return (
+								<LinkButton
+									url={link.url}
+									disabled={link.disabled}
+									text={link.disabled || "Invite Bot"}
+									Icon={DiscordIcon}
+									newTab={!link.disabled}
+									noMobile
+								/>
+							);
+						} else if (link.type === "github") {
+							return (
+								<LinkButton
+									url={link.url}
+									disabled={link.disabled}
+									text={link.disabled || "GitHub"}
+									Icon={GitHubIcon}
+									newTab={!link.disabled}
+									noMobile
+								/>
+							);
+						}
+					})
+				}
+			</ul>
+		</div>
+	</main>
+</div>
