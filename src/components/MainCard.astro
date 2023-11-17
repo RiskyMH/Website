@@ -1,0 +1,55 @@
+---
+import DiscordIcon from "./DiscordIcon.astro";
+import ExternalIcon from "./ExternalIcon.astro";
+import GitHubIcon from "./GitHubIcon.astro";
+import LinkButton from "./LinkButton.astro";
+import MailIcon from "./MailIcon.astro";
+---
+
+<div
+  class="sl z-10 flex flex-col items-center rounded-md bg-[#2a2a2a] p-4 shadow-md md:flex-row md:p-6"
+>
+  <picture class="h-32 w-32 rounded-lg bg-[#3a3a3a]">
+    <source media="(max-width:600px)" srcset="fire_anim_small.webp" />
+    <img
+      loading="lazy"
+      src="fire_anim.webp"
+      alt="🔥 Avatar"
+      height="128"
+      width="128"
+      title="A risky fire..."
+      data-from="https://github.com/microsoft/fluentui-emoji/tree/main/assets/Fire"
+    />
+  </picture>
+
+  <div class="flex flex-col md:ml-5">
+    <main class="mb-2 mt-2 text-center md:mb-0 md:mt-0 md:text-left">
+      <h1 class="text-3xl font-bold leading-9">RiskyMH</h1>
+      <p class="text-[#A6A6A6]">Just a random person on the internet</p>
+    </main>
+
+    <ul class="mt-0 flex flex-col md:mt-2 md:flex-row">
+      <LinkButton
+        url="https://github.com/RiskyMH"
+        text="GitHub"
+        Icon={GitHubIcon}
+      />
+      <LinkButton
+        url="https://discord.gg/qK9pfnB3Yv"
+        text="Discord Server"
+        Icon={DiscordIcon}
+      />
+      <LinkButton
+        url="mailto:michael@riskymh.dev"
+        text="Email"
+        Icon={MailIcon}
+      />
+      {/* Placeholder for when I actually have another thing */}
+      <LinkButton
+        url="https://riskymh.dev"
+        text="Website"
+        Icon={ExternalIcon}
+      />
+    </ul>
+  </div>
+</div>

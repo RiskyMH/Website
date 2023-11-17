@@ -1,0 +1,42 @@
+---
+import ProjectInfo from "./ProjectInfo.astro";
+---
+
+<ProjectInfo
+  name="RiskyBOT"
+  icon="https://bot.riskymh.dev/robot.svg"
+  iconCircle
+  links={[
+    {
+      type: "discord-bot-invite",
+      url: "https://discord.com/api/oauth2/authorize?client_id=780657028695326720&scope=applications.commands",
+    },
+    { url: "https://github.com/RiskyMH/RiskyBOT", type: "github" },
+    { url: "https://bot.riskymh.dev", type: "website" },
+  ]}
+  description="A multipurpose Discord bot that can do random things..."
+/>
+
+<ProjectInfo
+  name="Boppy McBop Face"
+  icon="/mcbop.svg"
+  iconCircle
+  links={[
+    {
+      type: "discord-bot-invite",
+      url: "https://discord.com/oauth2/authorize?client_id=890492527701024808&permissions=8&scope=bot%20applications.commands",
+    },
+    { url: "", type: "website", disabled: "Currently doesn't have website" },
+  ]}
+  description="A Discord leveling bot with some other server features..."
+/>
+
+<ProjectInfo
+  name="Tools"
+  icon="/tools.png"
+  links={[
+    { url: "https://tools.riskymh.dev", type: "website" },
+    { url: "https://github.com/RiskyMH/Tools", type: "github" },
+  ]}
+  description="A website with random tools (some are discord related) [ALPHA]"
+/>

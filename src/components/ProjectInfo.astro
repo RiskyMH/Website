@@ -16,13 +16,36 @@ interface Props {
   iconCircle?: boolean;
 }
 const { name, icon, links, description, iconCircle } = Astro.props;
+
+const linkConfig = {
+  website: {
+    Component: LinkButton,
+    text: "Website",
+    Icon: ExternalIcon,
+  },
+  discord: {
+    Component: LinkButton,
+    text: "Discord",
+    Icon: DiscordIcon,
+  },
+  "discord-bot-invite": {
+    Component: LinkButton,
+    text: "Invite Bot",
+    Icon: DiscordIcon,
+  },
+  github: {
+    Component: LinkButton,
+    text: "GitHub",
+    Icon: GitHubIcon,
+  },
+};
 ---
 
 <div
-  class="snap-start flex h-screen w-screen md:h-auto md:w-auto items-center justify-center"
+  class="flex h-screen w-screen snap-center items-center justify-center sm:snap-align-none md:h-auto"
 >
   <main
-    class="rounded-md bg-[#2a2a2a] p-4 m-8 flex flex-col md:flex-row md:p-6 items-center shadow-md"
+    class="m-8 flex flex-col items-center rounded-md bg-[#2a2a2a] p-4 shadow-md md:flex-row md:p-6"
   >
     <img
       loading="lazy"
@@ -34,59 +57,30 @@ const { name, icon, links, description, iconCircle } = Astro.props;
     />
 
     <div class="flex flex-col md:ml-5">
-      <main class="mt-2 mb-2 md:mt-0 md:mb-0 text-center md:text-left">
-        <h1 class="text-2xl leading-9 font-bold">{name}</h1>
-        <p class="text-[#8f8f8f] md:w-[26rem]">{description}</p>
+      <main class="mb-2 mt-2 text-center md:mb-0 md:mt-0 md:text-left">
+        <h3 class="text-2xl font-bold leading-9">{name}</h3>
+        <p class="text-[#A6A6A6] md:w-[26rem]">{description}</p>
       </main>
 
-      <ul class="flex mt-2 flex-row justify-center md:justify-normal">
+      <ul class="mt-2 flex flex-row justify-center md:justify-normal">
         {
-          links.map((link, _index) => {
-            if (link.type === "website") {
-              return (
-                <LinkButton
-                  url={link.url}
-                  disabled={link.disabled}
-                  text={link.disabled || "Website"}
-                  Icon={ExternalIcon}
-                  newTab={!link.disabled}
-                  noMobile
-                />
-              );
-            } else if (link.type === "discord") {
-              return (
-                <LinkButton
-                  url={link.url}
-                  disabled={link.disabled}
-                  text={link.disabled || "Discord Server"}
-                  Icon={DiscordIcon}
-                  newTab={!link.disabled}
-                  noMobile
-                />
-              );
-            } else if (link.type === "discord-bot-invite") {
-              return (
-                <LinkButton
-                  url={link.url}
-                  disabled={link.disabled}
-                  text={link.disabled || "Invite Bot"}
-                  Icon={DiscordIcon}
-                  newTab={!link.disabled}
-                  noMobile
-                />
-              );
-            } else if (link.type === "github") {
-              return (
-                <LinkButton
-                  url={link.url}
-                  disabled={link.disabled}
-                  text={link.disabled || "GitHub"}
-                  Icon={GitHubIcon}
-                  newTab={!link.disabled}
-                  noMobile
-                />
-              );
+          links.map((link) => {
+            const { Component, Icon, text } = linkConfig[link.type];
+
+            if (!Component) {
+              return null;
             }
+
+            return (
+              <Component
+                url={link.url}
+                disabled={link.disabled}
+                text={link.disabled || text}
+                Icon={Icon}
+                newTab={!link.disabled}
+                noMobile
+              />
+            );
           })
         }
       </ul>

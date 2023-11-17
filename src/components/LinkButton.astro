@@ -11,7 +11,7 @@ interface Props {
 const { url, text, Icon, newTab, noMobile, disabled } = Astro.props;
 ---
 
-<li class="w-auto inline-block mr-2" title={text}>
+<li class="mr-2 inline-block w-auto" title={text}>
   <a
     href={url == "" ? "#" : url}
     target={newTab ? "_blank" : "_self"}
