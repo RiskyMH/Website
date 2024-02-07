@@ -1,32 +1,23 @@
-<div class="mt-[-3.5rem] flex w-full justify-center">
-  <button
-    id="scroll-for-projects"
-    class="z-0 cursor-pointer rounded-lg p-1 text-center text-[#8f8f8f] hover:text-white/90"
-  >
-    <p class="mb-1">Scroll to projects!</p>
-    <div class="flex justify-center">
-      <svg
-        class="h-4 w-4 animate-bounce"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M10 3a1 1 0 00-1 1v10.586l-2.293-2.293a1 1 0 10-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 10-1.414-1.414L11 15.586V4a1 1 0 00-1-1z"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
-    </div>
-  </button>
+<div class="-mt-[3.5rem] flex w-full justify-center">
+	<button
+		class="z-0 cursor-pointer rounded-lg p-1 text-center text-[#8f8f8f] hover:text-white/90 flex flex-col gap-1"
+		onclick='document.getElementById("projects")?.scrollIntoView({behavior: "smooth"})'
+	>
+		<p>Scroll to projects!</p>
+		<div class="flex justify-center">
+			<svg
+				class="h-4 w-4 animate-bounce"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M10 3a1 1 0 00-1 1v10.586l-2.293-2.293a1 1 0 10-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 10-1.414-1.414L11 15.586V4a1 1 0 00-1-1z"
+					clip-rule="evenodd"
+				>
+				</path>
+			</svg>
+		</div>
+	</button>
 </div>
-
-<script>
-  const button = document.getElementById("scroll-for-projects");
-  button?.addEventListener("click", () => {
-    // scroll down one height (screen height)
-    const mainElement = document.getElementById("main");
-    mainElement?.scrollBy({ top: 1, behavior: "smooth" });
-  });
-</script>
