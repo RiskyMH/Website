@@ -18,6 +18,16 @@ import ProjectInfo from "./ProjectInfo.astro";
 />
 
 <ProjectInfo
+  name="EmailThing"
+  icon="/emailthing.svg"
+  links={[
+    { url: "https://emailthing.xyz", type: "website" },
+    { url: "https://github.com/RiskyMH/Email", type: "github" },
+  ]}
+  description="A Gmail alternative that I made because I wanted free custom domain."
+/>
+
+<ProjectInfo
   name="Boppy McBop Face"
   icon="/mcbop.svg"
   iconCircle
@@ -32,13 +42,23 @@ import ProjectInfo from "./ProjectInfo.astro";
 />
 
 <ProjectInfo
-  name="EmailThing"
-  icon="/emailthing.webp"
+  name="Forms"
+  icon="/forms.svg"
   links={[
-    { url: "https://emailthing.xyz", type: "website" },
-    { url: "https://github.com/RiskyMH/Email", type: "github" },
+    { url: "https://forms.riskymh.dev", type: "website" },
+    { url: "https://github.com/RiskyMH/Forms", type: "github" },
   ]}
-  description="A Gmail alternative that I made because I wanted free custom domain."
+  description="A website where you can create forms and get responses."
+/>
+
+<ProjectInfo
+  name="Stats Compare"
+  icon="/stats-compare.svg"
+  links={[
+    { url: "https://stats.riskymh.dev", type: "website" },
+    { url: "https://github.com/RiskyMH/Stats", type: "github" },
+  ]}
+  description="Site with a bunch of stats (can play higher or lower)."
 />
 
 <ProjectInfo
