@@ -39,6 +39,18 @@ const { title = "RiskyMH" } = Astro.props;
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://riskymh.dev/" />
+
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "RiskyMH",
+        "author": { "@type": "Person", "name": "RiskyMH" },
+        "description": "Just a random person on the internet.",
+        "logo": "https://riskymh.dev/fire_anim.png",
+        "url": "https://riskymh.dev/"
+      }
+    </script>
   </head>
   <body class="font-sans">
     <slot />
