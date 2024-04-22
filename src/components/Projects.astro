@@ -3,6 +3,17 @@ import ProjectInfo from "./ProjectInfo.astro";
 ---
 
 <ProjectInfo
+  name="EmailThing"
+  icon="/emailthing.svg"
+  iconCircle
+  links={[
+    { url: "https://emailthing.xyz/home", type: "website" },
+    { url: "https://github.com/RiskyMH/Email", type: "github" },
+  ]}
+  description="A Gmail alternative that I made because I wanted free custom domain."
+/>
+
+<ProjectInfo
   name="RiskyBOT"
   icon="https://bot.riskymh.dev/robot.svg"
   iconCircle
@@ -15,17 +26,6 @@ import ProjectInfo from "./ProjectInfo.astro";
     { url: "https://bot.riskymh.dev", type: "website" },
   ]}
   description="A multipurpose Discord bot that can do random things..."
-/>
-
-<ProjectInfo
-  name="EmailThing"
-  icon="/emailthing.svg"
-  iconCircle
-  links={[
-    { url: "https://emailthing.xyz", type: "website" },
-    { url: "https://github.com/RiskyMH/Email", type: "github" },
-  ]}
-  description="A Gmail alternative that I made because I wanted free custom domain."
 />
 
 <ProjectInfo
@@ -62,7 +62,7 @@ import ProjectInfo from "./ProjectInfo.astro";
   description="Site with a bunch of stats (can play higher or lower)."
 />
 
-<ProjectInfo
+<!-- <ProjectInfo
   name="Tools"
   icon="/tools.png"
   links={[
@@ -70,4 +70,4 @@ import ProjectInfo from "./ProjectInfo.astro";
     { url: "https://github.com/RiskyMH/Tools", type: "github" },
   ]}
   description="A website with random tools (some are discord related) [ALPHA]"
-/>
+/> -->
