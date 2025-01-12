@@ -1,10 +1,16 @@
 ---
 import ProjectInfo from "./ProjectInfo.astro";
+import EmailThingIcon from "../../public/emailthing.svg";
+import RiskyBOTIcon from "../../public/riskybot.svg";
+import McBopIcon from "../../public/mcbop.svg";
+import FormsIcon from "../../public/forms.svg";
+import StatsCompareIcon from "../../public/stats-compare.svg";
 ---
 
 <ProjectInfo
 	name="EmailThing"
 	icon="/emailthing.svg"
+	Icon={EmailThingIcon}
 	iconCircle
 	links={[
 		{ url: "https://emailthing.app/home", type: "website" },
@@ -16,6 +22,7 @@ import ProjectInfo from "./ProjectInfo.astro";
 <ProjectInfo
 	name="RiskyBOT"
 	icon="https://bot.riskymh.dev/robot.svg"
+	Icon={RiskyBOTIcon}
 	iconCircle
 	links={[
 		{
@@ -31,6 +38,7 @@ import ProjectInfo from "./ProjectInfo.astro";
 <ProjectInfo
 	name="Boppy McBop Face"
 	icon="/mcbop.svg"
+	Icon={McBopIcon}
 	iconCircle
 	links={[
 		{
@@ -45,6 +53,7 @@ import ProjectInfo from "./ProjectInfo.astro";
 <ProjectInfo
 	name="Forms"
 	icon="/forms.svg"
+	Icon={FormsIcon}
 	links={[
 		{ url: "https://forms.riskymh.dev", type: "website" },
 		{ url: "https://github.com/RiskyMH/Forms", type: "github" },
@@ -55,6 +64,7 @@ import ProjectInfo from "./ProjectInfo.astro";
 <ProjectInfo
 	name="Stats Compare"
 	icon="/stats-compare.svg"
+	Icon={StatsCompareIcon}
 	links={[
 		{ url: "https://stats.riskymh.dev", type: "website" },
 		{ url: "https://github.com/RiskyMH/Stats", type: "github" },
@@ -62,7 +72,8 @@ import ProjectInfo from "./ProjectInfo.astro";
 	description="Site with a bunch of stats (can play higher or lower)."
 />
 
-{/** 
+{
+	/** 
  <ProjectInfo
   name="Tools"
   icon="/tools.png"
@@ -72,4 +83,5 @@ import ProjectInfo from "./ProjectInfo.astro";
   ]}
   description="A website with random tools (some are discord related) [ALPHA]"
 /> 
-*/}
+*/
+}

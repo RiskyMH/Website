@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* @layer utilities {
+.h-screen {
+    height: 100dvh;
+}
+} */
+
+@theme {
+    /* --font-sans: Inter */
+    /* --height-screen: 100dvh */
+}
