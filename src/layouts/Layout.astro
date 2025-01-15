@@ -1,6 +1,6 @@
 ---
 // import '@fontsource/inter';
-import "../tailwind.css"
+import "../tailwind.css";
 interface Props {
   title?: string;
 }
@@ -19,7 +19,8 @@ const { title = "RiskyMH" } = Astro.props;
 
     {/* SEO */}
     <meta name="description" content="Just a random person on the internet" />
-    <meta name="keywords" content="RiskyMH" />
+    <meta name="keywords" content="RiskyMH,EmailThing" />
+    <meta name="author" content="RiskyMH" />
 
     {/* Coloring mainly for discord */}
     {
@@ -40,6 +41,16 @@ const { title = "RiskyMH" } = Astro.props;
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://riskymh.dev/" />
+    <meta property="og:image" content="https://riskymh.dev/fire_anim.png" />
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:creator" content="RiskyMH5" />
+    <meta property="twitter:title" content="RiskyMH" />
+    <meta
+      property="twitter:description"
+      content="Just a random person on the internet"
+    />
+    <meta property="twitter:image" content="https://riskymh.dev/fire_anim.png" />
 
     <script type="application/ld+json" is:inline>
       {
