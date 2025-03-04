@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 // import tailwind from "@astrojs/tailwind";
 import tailwindcss from '@tailwindcss/vite';
-import tailwindcssCleaner from "./.vite/tailwind-cleaner";
 import min from 'astro-min';
 
 
@@ -34,7 +33,6 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwindcss(),
-      tailwindcssCleaner(),
     ],
     build: {
       assetsInlineLimit: 100000,

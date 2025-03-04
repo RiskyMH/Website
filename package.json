@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/tailwind": "^5.1.4",
-    "@fontsource/inter": "^5.1.1",
-    "@tailwindcss/vite": "^4.0.0-beta.9",
-    "astro": "^5.1.5",
+    "@astrojs/tailwind": "^6.0.0",
+    "@fontsource/inter": "^5.2.5",
+    "@tailwindcss/vite": "^4.0.9",
+    "astro": "^5.4.1",
     "astro-min": "^1.3.1",
-    "tailwindcss": "^4.0.0-beta.9",
-    "typescript": "^5.7.3"
+    "tailwindcss": "^4.0.9",
+    "typescript": "^5.8.2"
   }
 }
