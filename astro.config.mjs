@@ -27,7 +27,7 @@ export default defineConfig({
   ],
   experimental: {
     // contentCollectionCache: true,
-    svg: true,
+    // svg: true,
   },
   compressHTML: true,
   vite: {
