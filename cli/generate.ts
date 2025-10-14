@@ -53,9 +53,9 @@ import { generate } from "./generate" with { type: "macro" };
 console.log(generate());`
   );
 
-  const a = await Bun.build({
+  await Bun.build({
     entrypoints: [import.meta.dir + "/cli.ts"],
-    outdir: ".",
+    outdir: import.meta.dir,
     target: "bun",
     minify: true,
   });

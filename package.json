@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && (sed -i 's/=\"\" //g' dist/*.html || true) && bun cli/generate.ts",
+    "build": "bun cli/generate.ts && astro check && astro build && (sed -i 's/=\"\" //g' dist/*.html || true)",
     "preview": "astro preview",
     "astro": "astro"
   },
