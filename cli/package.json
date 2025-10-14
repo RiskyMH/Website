@@ -1,0 +1,22 @@
+{
+    "name": "riskymh",
+    "description": "Just a random person on the internet!",
+    "homepage": "https://riskymh.dev",
+    "version": "1.0.0",
+    "author": "RiskyMH",
+    "bin": {
+        "riskymh": "./cli.js"
+    },
+    "scripts": {
+        "prepack": "bun ./generate.ts",
+        "dev": "bun --hot ./generate.ts"
+    },
+    "files": [
+        "cli.js"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RiskyMH/website.git",
+        "directory": "cli"
+    }
+}
