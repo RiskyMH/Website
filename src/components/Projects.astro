@@ -6,6 +6,7 @@ import McBopIcon from "../../public/mcbop.svg";
 import FormsIcon from "../../public/forms.svg";
 import StatsCompareIcon from "../../public/stats-compare.svg";
 import ChatroomIcon from "../../public/chatroom.svg";
+import HoneypotIcon from "../../public/honeypot.svg";
 ---
 
 <ProjectInfo
@@ -82,6 +83,21 @@ import ChatroomIcon from "../../public/chatroom.svg";
 		{ url: "https://github.com/RiskyMH/Chatroom", type: "github" },
 	]}
 	description="A basic stateless and bun websocket server."
+/>
+
+<ProjectInfo
+	name="Honeypot"
+	icon="/honeypot.svg"
+	Icon={HoneypotIcon}
+	links={[
+		{
+			type: "discord-bot-invite",
+			url: "https://discord.com/api/oauth2/authorize?client_id=1450060292716494940",
+		},
+		{ url: "https://github.com/RiskyMH/honeypot", type: "github" },
+		{ url: "https://discord.com/discovery/applications/1450060292716494940", type: "website" },
+	]}
+	description="A discord bot which bans people that use #honeypot."
 />
 
 {
