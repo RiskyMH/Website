@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
-/* @layer utilities {
-.h-screen {
-    height: 100dvh;
+@layer utilities {
+    .h-screen {
+        height: 100dvh;
+    }
 }
-} */
 
 @theme {
     /* --font-sans: Inter */
     /* --height-screen: 100dvh */
+}
+
+.svg-inline--fa {
+    display: var(--fa-display, inline-block);
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
 }
