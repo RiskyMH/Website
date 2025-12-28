@@ -47,8 +47,9 @@ export const MainCard: React.FC = () => (
             Icon={DiscordIcon}
           />
           <LinkButton
-            url="mailto:michael@riskymh.dev"
+            url="mailto:hello@riskymh.dev"
             text="Email"
+            obfuscate="https://emailthing.me/@RiskyMH"
             Icon={MailIcon}
           />
         </div>
@@ -67,7 +68,8 @@ export const MainCard: React.FC = () => (
           />
           <DropdownLink
             key="dropdown-email"
-            url="mailto:michael@riskymh.dev"
+            url="mailto:hello@riskymh.dev"
+            obfuscate="https://emailthing.me/@RiskyMH"
             text="Email"
             Icon={MailIcon}
           />

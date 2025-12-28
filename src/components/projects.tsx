@@ -26,7 +26,7 @@ export default function Projects() {
             icon="/emailthing.svg"
             Icon={EmailThingIcon}
             iconCircle
-            links={[{ url: "https://emailthing.app/home", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Email", type: "github" }]}
+            links={[{ url: "https://emailthing.app/home", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Email", type: "github" }, { url: "https://x.com/EmailThing_", type: "twitter" }]}
             description="A Gmail alternative that I made because I wanted free custom domain!"
           />
           <h2 className="hidden md:block text-[#A6A6A6] font-bold -mb-6 text-center">Discord Bots</h2>
@@ -177,6 +177,26 @@ const badgeScript = minify(/* js */`
       cards.forEach((card) => {
         observer.observe(card);
       });
+
+      // just here for fun of it
+      document.querySelectorAll('a[data-obfuscated]').forEach((link) => {
+        const fn = function () {
+          var encoded = link?.getAttribute('data-obfuscated')?.split('').reverse().join('') || '';
+          if (!encoded) return
+
+          var decoded = decodeURIComponent(escape(atob(encoded)));
+          link?.setAttribute('href', decoded);
+          link?.removeAttribute('data-obfuscated');
+
+          link?.removeEventListener('mouseover', fn)
+          link?.removeEventListener('focus', fn)
+          link?.removeEventListener('click', fn)
+        };
+        link?.addEventListener('mouseover', fn);
+        link?.addEventListener('focus', fn);
+        link?.addEventListener('click', fn);
+      });
+
     };
     document.addEventListener("DOMContentLoaded", fn);
     fn();

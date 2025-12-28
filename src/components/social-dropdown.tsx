@@ -17,7 +17,8 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
         }
       `.replace(/\s+/g, " ")}</style>
       <script
-        dangerouslySetInnerHTML={{ __html: minify(`window.addEventListener('click', (e) => {
+        dangerouslySetInnerHTML={{
+          __html: minify(`window.addEventListener('click', (e) => {
   const menu = document.getElementById('social-dropdown-menu');
   const checkbox = document.getElementById('social-dropdown-toggle');
   if (!menu || !checkbox) return;
@@ -28,7 +29,8 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
   ) {
     checkbox.checked = false;
   }
-});`) }}
+});`)
+        }}
       />
       <input
         id="social-dropdown-toggle"
@@ -36,18 +38,18 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
         className="peer hidden"
         tabIndex={-1}
       />
-<label
-          htmlFor="social-dropdown-toggle"
-          className="cursor-pointer flex items-center justify-center md:w-20 h-9 md:max-w-20 rounded-lg bg-[#4a4a4a] hover:bg-white hover:text-[#1a1a1a] transition border border-transparent select-none z-20 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6e6e6e] transition-shadow duration-100"
-          tabIndex={0}
-          role="button"
-          aria-label="More links"
+      <label
+        htmlFor="social-dropdown-toggle"
+        className="cursor-pointer flex items-center justify-center md:w-20 h-9 md:max-w-20 rounded-lg bg-[#4a4a4a] hover:bg-white hover:text-[#1a1a1a] transition border border-transparent select-none z-20 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6e6e6e] transition-shadow duration-100"
+        tabIndex={0}
+        role="button"
+        aria-label="More links"
       >
         <span className="sr-only">More links</span>
         <EllipsisIcon className="w-6 h-6" />
       </label>
       <div
-        className="hover-bridge absolute z-10 left-0 right-0 h-[15px] md:top-[35px] md:bottom-auto top-auto bottom-[35px]"
+        className="hover-bridge absolute z-10 left-0 right-0 h-3.75 md:top-8.75 md:bottom-auto top-auto bottom-8.75"
         tabIndex={-1}
         aria-hidden="true"
         style={{ pointerEvents: "auto" }}
@@ -66,14 +68,18 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
   );
 }
 
-export function DropdownLink({ url, text, Icon, newTab = false }: { url: string; text: string; Icon: React.ComponentType<{ className?: string }>; newTab?: boolean; }) {
+export function DropdownLink({ url, text, Icon, newTab = false, obfuscate }: { url: string; text: string; Icon: React.ComponentType<{ className?: string }>; newTab?: boolean; obfuscate?: string | boolean }) {
+  function encodeObfuscated(str: string): string {
+    return btoa(unescape(encodeURIComponent(str))).split("").reverse().join("");
+  }
   return (
     <li>
       <a
-        href={url || "#"}
+        href={obfuscate ? (typeof obfuscate === "string" ? obfuscate : "#") : (url || "#")}
         target={newTab ? '_blank' : '_self'}
         rel="noopener noreferrer"
         tabIndex={0}
+        data-obfuscated={obfuscate ? encodeObfuscated(url) : undefined}
         className="flex items-center gap-2 px-4 py-2 hover:bg-[#363636] text-white text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6e6e6e]"
       >
         <Icon className="w-4 h-4 inline" /> {text}

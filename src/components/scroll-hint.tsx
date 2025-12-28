@@ -30,7 +30,7 @@ const scrollHintScript = minify(/* js */`
 
 const ScrollHint = () => (
   <>
-    <div className="-mt-[4rem] flex w-full justify-center">
+    <div className="-mt-16 flex w-full justify-center">
       <button
         id="scroll-hint"
         className="z-0 cursor-pointer rounded-xl p-2 pb-1 text-center text-[#8f8f8f] hover:text-white/90 flex flex-col gap-1 transition-alll duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6e6e6e] focus-visible:bg-[#2a2a2a]"
