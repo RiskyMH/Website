@@ -1,0 +1,21 @@
+---
+interface Props {
+  url: string;
+  text: string;
+  Icon: any;
+  newTab?: boolean;
+}
+const { url, text, Icon, newTab = false } = Astro.props;
+---
+<li>
+  <a
+    href={url || "#"}
+    target={newTab ? '_blank' : '_self'}
+    rel="noopener noreferrer"
+    tabindex="0"
+    class="flex items-center gap-2 px-4 py-2 hover:bg-[#363636] text-white text-sm font-medium transition-colors duration-150"
+    onclick="document.getElementById('social-dropdown-toggle').checked=false"
+  >
+    <Icon class="w-4 h-4 inline" /> {text}
+  </a>
+</li>

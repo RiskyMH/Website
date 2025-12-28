@@ -36,6 +36,9 @@ export default defineConfig({
     ],
     build: {
       assetsInlineLimit: 100000,
-    }
+    },
+    preview: {
+      allowedHosts: true,
+    },
   },
 });
