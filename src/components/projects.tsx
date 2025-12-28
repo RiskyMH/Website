@@ -75,7 +75,7 @@ export default function Projects() {
             icon="/chatroom.svg"
             Icon={ChatroomIcon}
             links={[{ url: "https://chatroom.riskymh.dev", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Chatroom", type: "github" }]}
-            description="A basic stateless and bun websocket server where you can anonymously chat"
+            description="A basic stateless and bun websocket server where you can chat anon"
           />
         </div>
 
