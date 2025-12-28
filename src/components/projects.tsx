@@ -51,7 +51,7 @@ export default function Projects() {
               { url: "https://github.com/RiskyMH/honeypot", type: "github" },
               { url: "https://discord.com/discovery/applications/1450060292716494940", type: "website" },
             ]}
-            description="A discord bot which bans people that use #honeypot channel"
+            description="A discord bot which bans people that message in #honeypot channel"
           />
         </div>
         <div className="md:flex md:flex-col md:gap-8">
@@ -68,7 +68,7 @@ export default function Projects() {
             icon="/stats-compare.svg"
             Icon={StatsCompareIcon}
             links={[{ url: "https://stats.riskymh.dev", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Stats", type: "github" }]}
-            description="Site with a bunch of stats games, (can play higher or lower)"
+            description="Site with a bunch of stats games (can play higher or lower)"
           />
           <ProjectInfo
             name="Chatroom"
