@@ -11,6 +11,7 @@ import RedditIcon from "./icons/reddit-icon.svg";
 import BlueskyIcon from "./icons/bluesky-icon.svg";
 import GlobeIcon from "./icons/globe-icon.svg";
 import NpmIcon from "./icons/npm-icon.svg";
+import WikipediaIcon from "./icons/wikipedia-icon.svg";
 
 export const MainCard: React.FC = () => (
   <div
@@ -29,7 +30,7 @@ export const MainCard: React.FC = () => (
         data-from="https://github.com/microsoft/fluentui-emoji/tree/main/assets/Fire"
       />
     </picture>
-    <div className="flex flex-col gap-2 sm:mr-2">
+    <div className="flex flex-col gap-2 md:mr-2">
       <main className="text-center md:text-left">
         <h1 className="text-3xl font-bold leading-9">RiskyMH</h1>
         <p className="text-[#A6A6A6]">Just a random person on the internet</p>
@@ -103,6 +104,12 @@ export const MainCard: React.FC = () => (
             url="https://bsky.app/profile/riskymh.dev"
             text="Bluesky"
             Icon={BlueskyIcon}
+          />
+          <DropdownLink
+            key="dropdown-wikipedia"
+            url="https://en.wikipedia.org/wiki/User:RiskyMH"
+            text="Wikipedia"
+            Icon={WikipediaIcon}
           />
           <DropdownLink
             key="dropdown-website"

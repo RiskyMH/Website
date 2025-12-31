@@ -22,6 +22,7 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, children }) => (
       {/* Discord coloring etc */}
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2a2a" />
       <meta name="theme-color" content="#FF6723" />
+      <meta name="color-scheme" content="dark" />
       {/* Fancier SEO */}
       <meta property="og:title" content="RiskyMH" />
       <meta property="og:description" content="Just a random person on the internet" />

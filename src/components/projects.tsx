@@ -20,7 +20,7 @@ export default function Projects() {
         className="max-w-5xl mx-auto px-4 md:px-6 xl:px-8 w-full xl:grid xl:grid-cols-2 gap-10 space-y-16 md:space-y-8 lg:space-y-0 pb-10"
       >
         <div className="md:flex md:flex-col md:gap-8">
-          <h2 className="hidden md:block max-md:-my-8 text-[#A6A6A6] font-bold -mb-6 text-center">Favorite</h2>
+          <ProjectGroupTitle title="Favorite" />
           <ProjectInfo
             name="EmailThing"
             icon="/emailthing.svg"
@@ -29,7 +29,8 @@ export default function Projects() {
             links={[{ url: "https://emailthing.app/home", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Email", type: "github" }, { url: "https://x.com/EmailThing_", type: "twitter" }]}
             description="A Gmail alternative that I made because I wanted free custom domain!"
           />
-          <h2 className="hidden md:block text-[#A6A6A6] font-bold -mb-6 text-center">Discord Bots</h2>
+
+          <ProjectGroupTitle title="Discord Bots" />
           <ProjectInfo
             name="RiskyBOT"
             icon="https://bot.riskymh.dev/robot.svg"
@@ -55,7 +56,7 @@ export default function Projects() {
           />
         </div>
         <div className="md:flex md:flex-col md:gap-8">
-          <h2 className="hidden md:block text-[#A6A6A6] max-sm:-my-8 lg:max-xl:mt-8 font-bold -mb-6 text-center">Web Apps</h2>
+          <ProjectGroupTitle title="Web Apps" />
           <ProjectInfo
             name="Forms"
             icon="/forms.svg"
@@ -75,7 +76,7 @@ export default function Projects() {
             icon="/chatroom.svg"
             Icon={ChatroomIcon}
             links={[{ url: "https://chatroom.riskymh.dev", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Chatroom", type: "github" }]}
-            description="A basic stateless and bun websocket server where you can chat anon"
+            description="A basic & stateless websocket server where you can chat anonymously"
           />
         </div>
 
@@ -92,6 +93,14 @@ export default function Projects() {
       </div>
       <script dangerouslySetInnerHTML={{ __html: badgeScript }} />
     </>
+  );
+}
+
+function ProjectGroupTitle({ title }: { title: string }) {
+  return (
+    <h2 className="hidden md:block max-md:-my-8 text-[#A6A6A6] font-bold -mb-6 text-center">
+      {title}
+    </h2>
   );
 }
 
