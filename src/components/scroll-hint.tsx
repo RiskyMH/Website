@@ -37,14 +37,17 @@ const ScrollHint = () => (
         // @ts-expect-error i know im being sus
         _onclick="document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })"
         aria-label="Scroll to projects section"
+        aria-hidden="true"
       >
         <p>Scroll to projects!</p>
         <div className="flex justify-center w-full">
           <svg
-            className="h-4 w-4 animate-bounce"
+            className="h-4 w-4 animate-bounce motion-reduce:animate-none"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
+            width={16}
+            height={16}
           >
             <path
               fillRule="evenodd"

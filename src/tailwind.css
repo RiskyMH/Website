@@ -9,7 +9,7 @@
 @theme inline {
     /* --font-sans: Inter */
     /* --height-screen: 100dvh */
-    
+
     --color-background: #1a1a1a;
     --color-card: #2a2a2a;
     --color-placeholder: #3a3a3a;
@@ -19,7 +19,7 @@
     --color-button-hover: #6a6a6a;
     --color-focus: #6e6e6e;
     --color-text-muted: #a0a0a0;
-    
+
     --color-text: #ffffff;
     --color-text-secondary: #A6A6A6;
     --color-text-secondary-2: #8f8f8f;
@@ -39,4 +39,3 @@
 body {
     color-scheme: dark;
 }
-

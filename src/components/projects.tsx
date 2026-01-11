@@ -98,9 +98,12 @@ export default function Projects() {
 
 function ProjectGroupTitle({ title }: { title: string }) {
   return (
-    <h2 className="hidden md:block max-md:-my-8 text-text-secondary font-bold -mb-6 text-center">
-      {title}
-    </h2>
+    <>
+      <h2 className="hidden md:block max-md:-my-8 text-text-secondary font-bold -mb-6 text-center">
+        {title}<span className="sr-only">:</span>
+      </h2>
+      <br className="hidden" />
+    </>
   );
 }
 

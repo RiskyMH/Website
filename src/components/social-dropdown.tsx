@@ -12,7 +12,7 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
         aria-label="More links"
       >
         <span className="sr-only">More links</span>
-        <EllipsisIcon className="w-6 h-6" />
+        <EllipsisIcon className="w-6 h-6" height={0} width={0} />
       </button>
       <div
         id="social-dropdown-hover-bridge"
@@ -47,7 +47,7 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
   );
 }
 
-export function DropdownLink({ url, text, Icon, obfuscate }: { url: string; text: string; Icon: React.ComponentType<{ className?: string }>; newTab?: boolean; obfuscate?: string | boolean }) {
+export function DropdownLink({ url, text, Icon, obfuscate }: { url: string; text: string; Icon: React.ComponentType<{ className?: string; height?: number; width?: number }>; newTab?: boolean; obfuscate?: string | boolean }) {
   function encodeObfuscated(str: string): string {
     return btoa(unescape(encodeURIComponent(str))).split("").reverse().join("");
   }
@@ -56,11 +56,12 @@ export function DropdownLink({ url, text, Icon, obfuscate }: { url: string; text
       <a
         href={obfuscate ? (typeof obfuscate === "string" ? obfuscate : "#") : (url || "#")}
         rel="noopener noreferrer"
+        itemProp="sameAs"
         tabIndex={0}
         data-obfuscated={obfuscate ? encodeObfuscated(url) : undefined}
         className="flex items-center gap-2 px-4 py-2 hover:bg-dropdown-hover text-white text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus"
       >
-        <Icon className="w-4 h-4 inline" /> {text}
+        <Icon className="w-4 h-4 inline" height={16} width={16} /> {text}
       </a>
     </li>
   );

@@ -60,7 +60,7 @@ export const svgoPlugin: BunPlugin = {
             return {
                 contents: `
 const ${componentName} = (props: React.SVGProps<SVGSVGElement>) => (
-    ${jsx.replace(/<svg([^>]*)>/, "<svg$1 {...props}>")}
+    ${jsx.replace(/<svg([^>]*)>/, "<svg$1 width={128} height={128} {...props}>")}
 );
 
 export default ${componentName};
