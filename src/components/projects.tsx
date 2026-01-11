@@ -86,7 +86,7 @@ export default function Projects() {
           href="https://github.com/stars/RiskyMH/lists/my-projects"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-center text-[#A6A6A6] hover:text-white hover:underline font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6e6e6e] p-1 rounded-lg"
+          className="text-center text-text-secondary hover:text-white hover:underline font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus p-1 rounded-lg"
         >
           (view more on my github)
         </a>
@@ -98,7 +98,7 @@ export default function Projects() {
 
 function ProjectGroupTitle({ title }: { title: string }) {
   return (
-    <h2 className="hidden md:block max-md:-my-8 text-[#A6A6A6] font-bold -mb-6 text-center">
+    <h2 className="hidden md:block max-md:-my-8 text-text-secondary font-bold -mb-6 text-center">
       {title}
     </h2>
   );

@@ -6,10 +6,10 @@ import MainCard from "../components/main-card";
 
 const Index = () => (
   <Layout>
-    <style>{`body { background-color: #1a1a1a; overflow: hidden; }`}</style>
+    <style>{`body { background-color: var(--background); overflow: hidden; }`}</style>
      <div
        id="main"
-       className="h-dvh w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll bg-[#1a1a1a] text-white"
+       className="h-dvh w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll bg-background text-white"
        aria-labelledby="page-title"
        tabIndex={-1}
      >
@@ -24,7 +24,7 @@ const Index = () => (
            <h2 className="pt-4 text-3xl font-bold leading-9">
              Projects<span className="hidden md:inline">:</span>
            </h2>
-          <p className="text-[#A6A6A6]">The things that I have worked on!</p>
+          <p className="text-text-secondary">The things that I have worked on!</p>
         </div>
         <Projects />
       </div>

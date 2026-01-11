@@ -16,9 +16,9 @@ import WikipediaIcon from "./icons/wikipedia-icon.svg";
 export const MainCard: React.FC = () => (
   <div
     id="main-card"
-    className="z-10 flex flex-col items-center rounded-xl bg-[#2a2a2a] p-4 shadow-md md:flex-row md:p-6 gap-5"
+    className="z-10 flex flex-col items-center rounded-xl bg-card p-4 shadow-md md:flex-row md:p-6 gap-5"
   >
-    <picture className="h-32 w-32 rounded-xl bg-[#3a3a3a]">
+    <picture className="h-32 w-32 rounded-xl bg-placeholder">
       <source media="(max-width:600px)" srcSet="/fire_anim_small.webp" />
       <img
         loading="lazy"
@@ -33,7 +33,7 @@ export const MainCard: React.FC = () => (
     <div className="flex flex-col gap-2 md:mr-2">
       <main className="text-center md:text-left">
         <h1 className="text-3xl font-bold leading-9">RiskyMH</h1>
-        <p className="text-[#A6A6A6]">Just a random person on the internet</p>
+        <p className="text-text-secondary">Just a random person on the internet</p>
       </main>
       <div className="flex flex-col md:flex-row gap-2 w-full">
         <div className="flex flex-row gap-2 w-full *:flex-1">
@@ -86,7 +86,7 @@ export const MainCard: React.FC = () => (
             text="NPM"
             Icon={NpmIcon}
           />
-          <li key="dropdown-separator" className="py-1"><hr className="border-white/10 border-t" /></li>
+          <li key="dropdown-separator" className="py-1"><hr className="border-dropdown-hover border-t" /></li>
           <DropdownLink
             key="dropdown-youtube"
             url="https://youtube.com/@RiskyMH"

@@ -6,7 +6,7 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
     <div className="relative group-[social-dropdown]" id="social-dropdown">
       <button
         id="social-dropdown-button"
-        className="peer cursor-pointer flex items-center justify-center md:w-20 h-9 w-full md:max-w-20 rounded-lg bg-[#4a4a4a] hover:bg-white hover:text-[#1a1a1a] transition border border-transparent select-none z-20 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6e6e6e] duration-100"
+        className="peer cursor-pointer flex items-center justify-center md:w-20 h-9 w-full md:max-w-20 rounded-lg bg-button hover:bg-button-hover text-text transition border border-transparent select-none z-20 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-focus duration-100"
         tabIndex={0}
         role="button"
         aria-label="More links"
@@ -23,7 +23,7 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
       />
       <div
         id="social-dropdown-menu"
-        className="absolute peer right-0 md:top-12 md:bottom-auto top-auto bottom-12 mt-0 z-30 min-w-full max-h-[65vh] md:max-h-[calc(50vh-4.5rem)] overflow-y-auto overflow-x-hidden rounded-xl bg-[#242424] shadow-lg ring-1 ring-white/10 opacity-0 invisible pointer-events-none transition-all duration-200"
+        className="absolute peer right-0 md:top-12 md:bottom-auto top-auto bottom-12 mt-0 z-30 min-w-full max-h-[65vh] md:max-h-[calc(50vh-4.5rem)] overflow-y-auto overflow-x-hidden rounded-xl bg-dropdown shadow-lg ring-1 ring-dropdown-hover opacity-0 invisible pointer-events-none transition-all duration-200"
         tabIndex={-1}
         aria-hidden="true"
       >
@@ -58,7 +58,7 @@ export function DropdownLink({ url, text, Icon, obfuscate }: { url: string; text
         rel="noopener noreferrer"
         tabIndex={0}
         data-obfuscated={obfuscate ? encodeObfuscated(url) : undefined}
-        className="flex items-center gap-2 px-4 py-2 hover:bg-[#363636] text-white text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6e6e6e]"
+        className="flex items-center gap-2 px-4 py-2 hover:bg-dropdown-hover text-white text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus"
       >
         <Icon className="w-4 h-4 inline" /> {text}
       </a>

@@ -39,19 +39,19 @@ export default function ProjectInfo({ name, icon, Icon, links = [], description 
 }) {
   return (
     <div className="project-card flex h-dvh w-full snap-center items-center justify-center md:snap-align-none md:h-auto">
-      <div className="flex flex-col items-center rounded-xl bg-[#2a2a2a] p-3 shadow-md md:flex-row md:p-4 gap-2 md:gap-4 max-w-md w-full relative">
+      <div className="flex flex-col items-center rounded-xl bg-card p-3 shadow-md md:flex-row md:p-4 gap-2 md:gap-4 max-w-md w-full relative">
         {Icon ? (
           <>
-            <Icon className={`${iconCircle ? "rounded-full" : "rounded-xl"} w-24 h-24 bg-[#3a3a3a] shrink-0`} />
+            <Icon className={`${iconCircle ? "rounded-full" : "rounded-xl"} w-24 h-24 bg-placeholder shrink-0`} />
             <img loading="lazy" className="hidden" src={icon} alt={`${name}'s icon`} />
           </>
         ) : (
-          <img loading="lazy" className={`${iconCircle ? "rounded-full" : "rounded-xl"} w-24 h-24 bg-[#3a3a3a] shrink-0`} src={icon} alt={`${name}'s icon`} />
+          <img loading="lazy" className={`${iconCircle ? "rounded-full" : "rounded-xl"} w-24 h-24 bg-placeholder shrink-0`} src={icon} alt={`${name}'s icon`} />
         )}
         <div className="flex flex-col gap-2">
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold leading-9">{name}</h3>
-            <p className="text-[#A6A6A6] text-pretty">{description}</p>
+            <p className="text-text-secondary text-pretty">{description}</p>
           </div>
           <div className="flex flex-row justify-center md:justify-normal gap-2">
             {links
