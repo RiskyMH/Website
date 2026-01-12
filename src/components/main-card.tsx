@@ -20,11 +20,15 @@ export const MainCard: React.FC = () => (
     itemScope itemType="https://schema.org/Person"
   >
     <picture className="h-32 w-32 rounded-xl bg-placeholder">
-      <source media="(max-width:600px)" srcSet="/fire_anim_small.webp" type="image/webp" />
+      {/* <source media="(max-width:600px)" srcSet="/fire_anim_small.webp" type="image/webp" /> */}
+      <source srcSet="/fire_anim.avif" type="image/avif" />
+      <source srcSet="/fire_anim.webp" type="image/webp" />
+      <source srcSet="/fire_anim.png" type="image/png" />
       <img
-        loading="lazy"
+        // loading="lazy"
+        fetchPriority="high"
         itemProp="image"
-        src="/fire_anim.webp"
+        src="/fire_anim.png"
         alt="🔥 Avatar"
         height={128}
         width={128}
