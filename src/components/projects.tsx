@@ -14,6 +14,8 @@ export default function Projects() {
       <div
         id="project-group-badge"
         className="hidden fixed top-4 left-4 z-50 bg-white/5 text-sm font-semibold px-3 py-1.5 rounded-2xl text-white cursor-pointer select-none transition-opacity duration-200 drop-shadow opacity-0"
+        aria-hidden
+        tabIndex={-1}
       />
       <div
         id="projects"
