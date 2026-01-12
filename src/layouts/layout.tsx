@@ -50,6 +50,7 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, children }) => (
     </head>
     <body className="font-sans">
       {children}
+      {process.env.EXTRA_SCRIPTS && <div dangerouslySetInnerHTML={{ __html: process.env.EXTRA_SCRIPTS }} />}
     </body>
   </html>
 );
