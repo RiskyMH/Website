@@ -12,6 +12,7 @@ import BlueskyIcon from "./icons/bluesky-icon.svg";
 import GlobeIcon from "./icons/globe-icon.svg";
 import NpmIcon from "./icons/npm-icon.svg";
 import WikipediaIcon from "./icons/wikipedia-icon.svg";
+import { minify } from "../tools/minify.macro" with { type: "macro" };
 
 export const MainCard: React.FC = () => (
   <main
@@ -19,10 +20,11 @@ export const MainCard: React.FC = () => (
     className="z-10 flex flex-col items-center rounded-xl bg-card p-4 shadow-md md:flex-row md:p-6 gap-5"
     itemScope itemType="https://schema.org/Person"
   >
-    <picture className="h-32 w-32 rounded-xl bg-placeholder">
+    <picture className="h-32 w-32 rounded-xl bg-placeholder" id="avatar-container">
       {/* <source media="(max-width:600px)" srcSet="/fire_anim_small.webp" type="image/webp" /> */}
       <source srcSet="/fire_anim.avif" type="image/avif" />
-      <source srcSet="/fire_anim.webp" type="image/webp" />
+      <source srcSet="/fire_anim_small.webp" type="image/webp" media="(max-width:600px)" />
+      <source srcSet="/fire_anim.webp" type="image/webp" media="(min-width:600px" />
       <source srcSet="/fire_anim.png" type="image/png" />
       <img
         // loading="lazy"
@@ -35,8 +37,23 @@ export const MainCard: React.FC = () => (
         title="A risky fire..."
         data-from="https://github.com/microsoft/fluentui-emoji/tree/main/assets/Fire"
         style={{ animation: "fadeInWhite 0.5s 0.5s forwards", color: "transparent" }}
+        className="rounded-xl"
       />
       <style>{`@keyframes fadeInWhite{to{color:white}}`}</style>
+
+      {/* safari is kinda broken for animated avif images: https://bugs.webkit.org/show_bug.cgi?id=275906 */}
+      <script dangerouslySetInnerHTML={{
+        __html: minify(`{
+            const ua = navigator.userAgent;
+            const isIOS = /\\b(iPad|iPhone|iPod)\\b/.test(ua);
+            const hasAppleWebKit = /AppleWebKit/.test(ua);
+            const hasChrome = /Chrome/.test(ua);
+
+            if (isIOS || (hasAppleWebKit && !hasChrome)) {
+              document.querySelector('#avatar-container source[type="image/avif"]')?.remove();
+            }      
+          };`)
+      }} />
     </picture>
     <div className="flex flex-col gap-2 md:mr-2">
       <div className="text-center md:text-left">

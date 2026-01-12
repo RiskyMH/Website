@@ -23,7 +23,7 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
       />
       <div
         id="social-dropdown-menu"
-        className="absolute peer right-0 md:top-12 md:bottom-auto top-auto bottom-12 mt-0 z-30 min-w-full max-h-[65vh] md:max-h-[calc(50vh-4.5rem)] overflow-y-auto overflow-x-hidden rounded-xl bg-dropdown shadow-lg ring-1 ring-dropdown-hover opacity-0 invisible pointer-events-none transition-all duration-200"
+        className="absolute peer right-0 md:top-12 md:bottom-auto top-auto bottom-12 mt-0 z-30 min-w-full max-h-[65dvh] md:max-h-[calc(50dvh-4.5rem)] overflow-y-auto overflow-x-hidden rounded-xl bg-dropdown shadow-lg ring-1 ring-dropdown-hover opacity-0 invisible pointer-events-none transition-all duration-200"
         tabIndex={-1}
         aria-hidden="true"
       >
