@@ -170,7 +170,7 @@ const badgeScript = minify(/* js */`
             function getNearestGroupHeading(card) {
               let node = card.previousElementSibling;
               while (node) {
-                if (/^H[1-6]$/.test(node.tagName)) return node.textContent;
+                if (/^H[1-6]$/.test(node.tagName)) return node.textContent.replace(":", "");
                 node = node.previousElementSibling;
               }
               return null;
