@@ -5,7 +5,7 @@ import Projects from "../components/projects";
 import MainCard from "../components/main-card";
 
 const Index = () => (
-  <Layout>
+  <Layout canonical="/">
     <style>{`body { background-color: var(--background); overflow: hidden; }`}</style>
      <div
        id="main"

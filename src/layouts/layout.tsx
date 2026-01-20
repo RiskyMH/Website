@@ -4,16 +4,18 @@ import "../tailwind.css";
 // You can use next/head or react-helmet if SSR/SPA, but since this is static, just output direct head
 export type LayoutProps = {
   title?: string;
+  canonical?: string;
   children: React.ReactNode;
 };
 const siteTitle = "RiskyMH";
 
-const Layout: React.FC<LayoutProps> = ({ title = siteTitle, children }) => (
+const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", children }) => (
   <html lang="en">
     <head>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width" />
       <link rel="icon" type="image/svg+xml" href="/fire_flat.svg" />
+      <link rel="canonical" href={`https://riskymh.dev${canonical}`} />
       <meta name="generator" content="RiskyMH React layout" />
       <title>{title}</title>
       <meta name="description" content="Just a random person on the internet" />
