@@ -33,7 +33,7 @@ export default function ProjectInfo({ name, icon, Icon, links = [], description 
   name: string;
   icon?: string;
   Icon?: React.ComponentType<{ className?: string; height?: number; width?: number }>;
-  links: { url: string; type: keyof typeof linkConfig; disabled?: boolean; primary?: boolean }[];
+  links: { url: string; type: keyof typeof linkConfig; disabled?: boolean; primary?: boolean, hidden?: boolean }[];
   description?: string;
   iconCircle?: boolean;
 }) {
@@ -70,6 +70,7 @@ export default function ProjectInfo({ name, icon, Icon, links = [], description 
                       disabled={link.disabled}
                       primary={link.primary}
                       small={true}
+                      hidden={link.hidden}
                     />
                   );
                 })}

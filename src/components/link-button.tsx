@@ -11,9 +11,10 @@ interface LinkButtonProps {
   primary?: boolean;
   obfuscate?: string | boolean;
   itemProp?: string;
+  hidden?: boolean;
 }
 
-export default function LinkButton({ url = "", text, Icon, newTab = false, noMobile = false, disabled = false, small = false, primary = false, obfuscate = false, itemProp }: LinkButtonProps) {
+export default function LinkButton({ url = "", text, Icon, newTab = false, noMobile = false, disabled = false, small = false, primary = false, obfuscate = false, itemProp, hidden = false }: LinkButtonProps) {
   function encodeObfuscated(str: string): string {
     return btoa(unescape(encodeURIComponent(str))).split("").reverse().join("");
   }
@@ -32,7 +33,8 @@ export default function LinkButton({ url = "", text, Icon, newTab = false, noMob
             ? (small ? "px-3 py-1 text-xs min-w-14 h-8" : "p-1.5 text-sm h-8 min-w-21")
             : (small ? "w-12 h-8 max-w-12" : "w-full md:w-20 h-9 md:max-w-20")) + " " +
           (disabled ? "opacity-25 cursor-default" : "hover:bg-button-hover") + " " +
-          "focus:outline-none focus-visible:ring-2 focus-visible:ring-focus transition-shadow duration-100"
+          "focus:outline-none focus-visible:ring-2 focus-visible:ring-focus transition-shadow duration-100" + " " +
+          (hidden ? "hidden" : "")
         }
         aria-disabled={!!disabled}
         tabIndex={disabled ? -1 : 0}

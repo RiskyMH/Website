@@ -52,7 +52,8 @@ export default function Projects() {
             links={[
               { type: "discord-bot-invite", url: "https://discord.com/api/oauth2/authorize?client_id=1450060292716494940", primary: true },
               { url: "https://github.com/RiskyMH/honeypot", type: "github" },
-              { url: "https://discord.com/discovery/applications/1450060292716494940", type: "website" },
+              { url: "https://honeypot.riskymh.dev", type: "website" },
+              { url: "https://discord.com/discovery/applications/1450060292716494940", type: "website", hidden: true },
             ]}
             description="A discord bot which bans people that message in #honeypot channel"
           />
