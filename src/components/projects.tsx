@@ -34,18 +34,6 @@ export default function Projects() {
 
           <ProjectGroupTitle title="Discord Bots" />
           <ProjectInfo
-            name="RiskyBOT"
-            icon="https://bot.riskymh.dev/robot.svg"
-            Icon={RiskyBOTIcon}
-            iconCircle
-            links={[
-              { type: "discord-bot-invite", url: "https://discord.com/api/oauth2/authorize?client_id=780657028695326720", primary: true },
-              { url: "https://github.com/RiskyMH/RiskyBOT", type: "github" },
-              { url: "https://bot.riskymh.dev", type: "website" },
-            ]}
-            description="A multipurpose Discord bot that can do random fun things..."
-          />
-          <ProjectInfo
             name="Honeypot"
             icon="/honeypot.svg"
             Icon={HoneypotIcon}
@@ -56,6 +44,18 @@ export default function Projects() {
               { url: "https://discord.com/discovery/applications/1450060292716494940", type: "website", hidden: true },
             ]}
             description="A discord bot which bans people that message in #honeypot channel"
+          />
+          <ProjectInfo
+            name="RiskyBOT"
+            icon="https://bot.riskymh.dev/robot.svg"
+            Icon={RiskyBOTIcon}
+            iconCircle
+            links={[
+              { type: "discord-bot-invite", url: "https://discord.com/api/oauth2/authorize?client_id=780657028695326720", primary: true },
+              { url: "https://github.com/RiskyMH/RiskyBOT", type: "github" },
+              { url: "https://bot.riskymh.dev", type: "website" },
+            ]}
+            description="A multipurpose Discord bot that can do random fun things..."
           />
         </div>
         <div className="md:flex md:flex-col md:gap-8">
