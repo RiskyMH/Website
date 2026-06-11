@@ -36,17 +36,45 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", chi
       <meta property="twitter:title" content="RiskyMH" />
       <meta property="twitter:description" content="Just a random person on the internet" />
       <meta property="twitter:image" content="https://riskymh.dev/fire_anim.png" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "RiskyMH",
-          author: { "@type": "Person", name: "RiskyMH" },
-          description: "Just a random person on the internet.",
-          logo: "https://riskymh.dev/fire_anim.png",
-          url: "https://riskymh.dev/"
-        })
-      }} />
+      <meta name="application-name" content="RiskyMH" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://riskymh.dev/#person",
+                name: "RiskyMH",
+                url: "https://riskymh.dev/",
+                sameAs: [
+                  "https://github.com/RiskyMH",
+                  "https://x.com/RiskyMH5",
+                  "https://youtube.com/@RiskyMH",
+                ],
+                image: {
+                  "@type": "ImageObject",
+                  "@id": "https://riskymh.dev#logo",
+                  url: "https://riskymh.devfire_anim.png",
+                  caption: "RiskyMH Logo"
+                },
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://riskymh.dev/#website",
+                name: "RiskyMH",
+                url: "https://riskymh.dev/",
+                description: "Just a random person on the internet.",
+                publisher: {
+                  "@id": "https://riskymh.dev/#person"
+                },
+              }
+            ]
+          })
+        }}
+      />
+
       {/* MUST NOT REMOVE */}
       <style id="tailwind-styles">/*tailwind*/</style>
     </head>
