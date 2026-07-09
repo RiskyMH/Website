@@ -24,16 +24,6 @@ export default function Projects() {
         <div className="md:flex md:flex-col md:gap-8">
           <ProjectGroupTitle title="Favorite" />
           <ProjectInfo
-            name="EmailThing"
-            icon="/emailthing.svg"
-            Icon={EmailThingIcon}
-            iconCircle
-            links={[{ url: "https://emailthing.app/home", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Email", type: "github" }, { url: "https://x.com/EmailThing_", type: "twitter" }]}
-            description="A Gmail alternative that I made because I wanted free custom domain!"
-          />
-
-          <ProjectGroupTitle title="Discord Bots" />
-          <ProjectInfo
             name="Honeypot"
             icon="/honeypot.svg"
             Icon={HoneypotIcon}
@@ -45,6 +35,16 @@ export default function Projects() {
             ]}
             description="A discord bot which bans people that message in #honeypot channel"
           />
+          <ProjectGroupTitle title="Other Fun Things" />
+          <ProjectInfo
+            name="EmailThing"
+            icon="/emailthing.svg"
+            Icon={EmailThingIcon}
+            iconCircle
+            links={[{ url: "https://emailthing.app/home", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Email", type: "github" }, { url: "https://x.com/EmailThing_", type: "twitter" }]}
+            description="A Gmail alternative that I made because I wanted free custom domain!"
+          />
+
           <ProjectInfo
             name="RiskyBOT"
             icon="https://bot.riskymh.dev/robot.svg"
@@ -59,7 +59,14 @@ export default function Projects() {
           />
         </div>
         <div className="md:flex md:flex-col md:gap-8">
-          <ProjectGroupTitle title="Web Apps" />
+          <ProjectGroupTitle title="Simple Web Apps" />
+          <ProjectInfo
+            name="Chatroom"
+            icon="/chatroom.svg"
+            Icon={ChatroomIcon}
+            links={[{ url: "https://chatroom.riskymh.dev", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Chatroom", type: "github" }]}
+            description="A basic & stateless websocket server where you can chat anonymously"
+          />
           <ProjectInfo
             name="Forms"
             icon="/forms.svg"
@@ -74,19 +81,12 @@ export default function Projects() {
             links={[{ url: "https://stats.riskymh.dev", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Stats", type: "github" }]}
             description="Site with a bunch of stats games (can play higher or lower)"
           />
-          <ProjectInfo
-            name="Chatroom"
-            icon="/chatroom.svg"
-            Icon={ChatroomIcon}
-            links={[{ url: "https://chatroom.riskymh.dev", type: "website", primary: true }, { url: "https://github.com/RiskyMH/Chatroom", type: "github" }]}
-            description="A basic & stateless websocket server where you can chat anonymously"
-          />
         </div>
 
       </div>
       <div className="project-card flex h-dvh w-full snap-center items-center justify-center md:snap-align-none md:h-auto md:-mt-10 max-md:hidden">
         <a
-          href="https://github.com/stars/RiskyMH/lists/my-projects"
+          href="https://github.com/RiskyMH"
           target="_blank"
           rel="noopener noreferrer"
           className="text-center text-text-secondary hover:text-white hover:underline font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus p-1 rounded-lg"
