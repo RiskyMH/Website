@@ -3,7 +3,7 @@
 const WIDTH = 50;
 const WEBSITE_URL = "https://riskymh.dev";
 const GITUHB_URL = "https://github.com/RiskyMH";
-const DISCORD_URL = "https://discord.gg/qK9pfnB3Yv";
+const DISCORD_URL = "https://discord.gg/EpRzgepKuF";
 const EMAIL_MAILTO = atob("bWFpbHRvOm1pY2hhZWxAcmlza3ltaC5kZXY");
 
 const gray = (str: string) => `\x1b[38;2;107;114;128m${str}\x1b[0m`;

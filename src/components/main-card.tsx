@@ -69,7 +69,7 @@ export const MainCard: React.FC = () => (
             itemProp="sameAs"
           />
           <LinkButton
-            url="https://discord.gg/qK9pfnB3Yv"
+            url="https://discord.gg/EpRzgepKuF"
             text="Discord Server"
             Icon={DiscordIcon}
             itemProp="sameAs"
@@ -91,7 +91,7 @@ export const MainCard: React.FC = () => (
           />
           <DropdownLink
             key="dropdown-discord"
-            url="https://discord.gg/qK9pfnB3Yv"
+            url="https://discord.com/servers/riskys-server-894705593087049729"
             text="Discord Server"
             Icon={DiscordIcon}
           />
