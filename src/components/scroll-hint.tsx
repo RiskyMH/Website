@@ -33,7 +33,7 @@ const ScrollHint = () => (
     <div className="-mt-16 flex w-full justify-center" aria-hidden>
       <button
         id="scroll-hint"
-        className="z-0 cursor-pointer rounded-xl p-2 pb-1 text-center text-text-secondary hover:text-white/90 flex flex-col gap-1 transition-alll duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:bg-card"
+        className="z-0 cursor-pointer rounded-2xl p-2 pb-1 text-center text-text-secondary hover:text-white/90 flex flex-col gap-1 transition-alll duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:bg-card"
         // @ts-expect-error i know im being sus
         _onclick="document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })"
         tabIndex={-1}

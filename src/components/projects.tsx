@@ -19,7 +19,7 @@ export default function Projects() {
       />
       <div
         id="projects"
-        className="max-w-5xl mx-auto px-4 md:px-6 xl:px-8 w-full xl:grid xl:grid-cols-2 gap-10 space-y-16 md:space-y-8 lg:space-y-0 pb-10"
+        className="max-w-5xl mx-auto px-4 md:px-6 xl:px-8 w-full xl:grid xl:grid-cols-2 gap-10 space-y-16 md:space-y-8 xl:space-y-0 pb-10"
       >
         <div className="md:flex md:flex-col md:gap-8">
           <ProjectGroupTitle title="Favorite" />
@@ -89,7 +89,7 @@ export default function Projects() {
           href="https://github.com/RiskyMH"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-center text-text-secondary hover:text-white hover:underline font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus p-1 rounded-lg"
+          className="text-center text-text-secondary hover:text-white hover:underline font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus p-1 rounded-xl"
         >
           (view more on my github)
         </a>

@@ -28,7 +28,7 @@ export default function LinkButton({ url = "", text, Icon, newTab = false, noMob
         itemProp={itemProp}
         title={disabled ? typeof disabled === "string" ? disabled : text : text}
         className={
-          "rounded-lg bg-button shadow-sm flex items-center gap-2 text-text  " +
+          "rounded-xl bg-button shadow-sm flex items-center gap-2 text-text  " +
           (primary
             ? (small ? "px-3 py-1 text-xs min-w-14 h-8 max-w-[200px] group-hover/item:px-4" : "p-1.5 text-sm h-8 min-w-21")
             : (small ? "w-max h-8 text-xs min-w-12 px-4 max-w-12 overflow-hidden group-hover/item:max-w-[200px]" : "w-full md:w-20 h-9 md:max-w-20 justify-center")) + " " +

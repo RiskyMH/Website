@@ -17,10 +17,10 @@ import { minify } from "../tools/minify.macro" with { type: "macro" };
 export const MainCard: React.FC = () => (
   <main
     id="main-card"
-    className="z-10 flex flex-col items-center rounded-xl bg-card p-4 shadow-md md:flex-row md:p-6 gap-5"
+    className="z-10 flex flex-col items-center rounded-3xl bg-card p-4 shadow-md md:flex-row md:p-6 max-lg:pt-6 gap-5"
     itemScope itemType="https://schema.org/Person"
   >
-    <picture className="h-32 w-32 rounded-xl bg-placeholder" id="avatar-container">
+    <picture className="h-32 w-32 rounded-2xl bg-placeholder" id="avatar-container">
       {/* <source media="(max-width:600px)" srcSet="/fire_anim_small.webp" type="image/webp" /> */}
       <source srcSet="/fire_anim.avif" type="image/avif" />
       <source srcSet="/fire_anim_small.webp" type="image/webp" media="(max-width:600px)" />
@@ -37,7 +37,7 @@ export const MainCard: React.FC = () => (
         title="A risky fire..."
         data-from="https://github.com/microsoft/fluentui-emoji/tree/main/assets/Fire"
         style={{ animation: "fadeInWhite 0.5s 0.5s forwards", color: "transparent" }}
-        className="rounded-xl"
+        className="rounded-2xl"
       />
       <style>{`@keyframes fadeInWhite{to{color:white}}`}</style>
 

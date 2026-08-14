@@ -6,7 +6,7 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
     <div className="relative group-[social-dropdown]" id="social-dropdown">
       <button
         id="social-dropdown-button"
-        className="peer cursor-pointer flex items-center justify-center md:w-20 h-9 w-full md:max-w-20 rounded-lg bg-button hover:bg-button-hover text-text transition border border-transparent select-none z-20 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-focus duration-100"
+        className="peer cursor-pointer flex items-center justify-center md:w-20 h-9 w-full md:max-w-20 rounded-xl bg-button hover:bg-button-hover text-text transition border border-transparent select-none z-20 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-focus duration-100"
         tabIndex={0}
         role="button"
         aria-label="More links"
@@ -23,7 +23,7 @@ export default function SocialDropdown({ children }: { children: React.ReactNode
       />
       <div
         id="social-dropdown-menu"
-        className="absolute peer right-0 md:top-12 md:bottom-auto top-auto bottom-12 mt-0 z-30 min-w-full max-h-[65dvh] md:max-h-[calc(50dvh-4.5rem)] overflow-y-auto overflow-x-hidden rounded-xl bg-dropdown shadow-lg ring-1 ring-dropdown-hover opacity-0 invisible pointer-events-none transition-all duration-200"
+        className="absolute peer right-0 md:top-12 md:bottom-auto top-auto bottom-12 mt-0 z-30 min-w-full max-h-[65dvh] md:max-h-[calc(50dvh-4.5rem)] overflow-y-auto overflow-x-hidden rounded-2xl bg-dropdown shadow-lg ring-1 ring-dropdown-hover opacity-0 invisible pointer-events-none transition-all duration-200"
         tabIndex={-1}
         aria-hidden="true"
       >

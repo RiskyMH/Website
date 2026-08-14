@@ -41,19 +41,19 @@ export default function ProjectInfo({ name, icon, Icon, links = [], description 
     <>
       <br className="hidden" />
       <div className="project-card flex h-dvh w-full snap-center items-center justify-center md:snap-align-none md:h-auto">
-        <div className="flex flex-col items-center rounded-xl bg-card p-3 shadow-md md:flex-row md:p-4 gap-2 md:gap-4 max-w-md w-full relative">
+        <div className="flex flex-col items-center rounded-3xl bg-card p-3 shadow-md md:flex-row md:p-4 md:ps-6 max-lg:pt-8 max-lg:pb-6 gap-3 md:gap-4 max-w-md w-full relative">
           {Icon ? (
             <>
-              <Icon className={`${iconCircle ? "rounded-full" : "rounded-xl"} w-24 h-24 bg-placeholder shrink-0`} height={0} width={0} />
+              <Icon className={`${iconCircle ? "rounded-full" : "rounded-2xl"} w-24 h-24 bg-placeholder shrink-0`} height={0} width={0} />
               <img loading="lazy" className="hidden" src={icon} alt={`${name}'s icon`} width={128} height={128} />
             </>
           ) : (
-            <img loading="lazy" className={`${iconCircle ? "rounded-full" : "rounded-xl"} w-24 h-24 bg-placeholder shrink-0`} src={icon} alt={`${name}'s icon`} width={128} height={128} />
+            <img loading="lazy" className={`${iconCircle ? "rounded-full" : "rounded-2xl"} w-24 h-24 bg-placeholder shrink-0`} src={icon} alt={`${name}'s icon`} width={128} height={128} />
           )}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4 md:gap-2">
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold leading-9">{name}</h3>
-              <p className="text-text-secondary text-pretty">{description}</p>
+              <p className="text-text-secondary md:text-pretty text-balance">{description}</p>
             </div>
             <ul className="flex flex-row justify-center md:justify-normal gap-2 list-none">
               {links
