@@ -148,9 +148,12 @@ const badgeScript = minify(/* js */`
       badge.style.display = "none";
       badge.onclick = (e) => {
         e.preventDefault();
-        document
-          .getElementById("main-card")
-          ?.scrollIntoView({ behavior: "smooth" });
+        const main = document.getElementById("main");
+        if (main) {
+          main.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
       };
       const updateBadge = (group) => {
         badge.textContent = group;
