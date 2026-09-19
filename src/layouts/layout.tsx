@@ -88,7 +88,11 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", chi
                   "components": [
                     {
                       "type": 10, // ComponentType.TEXT_DISPLAY
-                      "content": `## [RiskyMH](https://riskymh.dev)\nJust a random person on the internet.\nMy projects include <:honeypot:1452856668202467481> [Honeypot](https://honeypot.riskymh.dev), <:emailthing:1226746122895097916> [EmailThing](https://emailthing.app/home), and more!`,
+                      "content": "## [RiskyMH](https://riskymh.dev)\nJust a random person on the internet.",
+                    },
+                    {
+                      "type": 10, // ComponentType.TEXT_DISPLAY
+                      "content": "My projects include <:honeypot:1452856668202467481> [Honeypot](https://honeypot.riskymh.dev), <:emailthing:1226746122895097916> [EmailThing](https://emailthing.app/home), and more!",
                     }
                   ],
                   "accessory": {
@@ -109,7 +113,7 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", chi
                       "emoji": {
                         "name": "fire",
                         "id": "1281081113338450012",
-                        "animated": false
+                        // "animated": false
                       }
                     },
                     {
@@ -120,7 +124,7 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", chi
                       "emoji": {
                         "name": "github",
                         "id": "1119818837542576208",
-                        "animated": false
+                        // "animated": false
                       }
                     },
                     {
