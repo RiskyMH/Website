@@ -56,7 +56,7 @@ const Layout: React.FC<LayoutProps> = ({ title = siteTitle, canonical = "/", chi
                 image: {
                   "@type": "ImageObject",
                   "@id": "https://riskymh.dev#logo",
-                  url: "https://riskymh.devfire_anim.png",
+                  url: "https://riskymh.dev/fire_anim.png",
                   caption: "RiskyMH Logo"
                 },
               },
